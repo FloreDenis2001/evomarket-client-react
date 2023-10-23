@@ -8,12 +8,12 @@ const MainCarousel = () => {
 
   return (
     <div className="carousel-container">
-      <Carousel autoPlay={true} interval={3000} showThumbs={false} showStatus={false}>
+      <Carousel autoPlay={true} interval={2000} infiniteLoop showThumbs={false} showStatus={false}>
         {mainCarouselData.map((image, index) => (
           <div key={index} className="image-container">
             <img
               src={image.image}
-              alt={`Image ${index + 1}`}
+              alt={`index-${index + 1}`}
               className="carousel-image"
             />
           </div>

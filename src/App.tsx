@@ -1,17 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Navigation from './components/Navigation';
 import Home from './pages/Home';
+import Header from './components/Header';
+import MeniuBar from './components/ui/MeniuBar';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <Navigation/>
-      <div>
-        <Home/>
-      </div>
-      Hello Ecommerce
+      <Header/>
+      <Home/>
+      <Footer/>
     </div>
   );
 }

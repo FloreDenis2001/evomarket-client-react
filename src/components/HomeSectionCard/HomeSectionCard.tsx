@@ -1,17 +1,35 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faHeart, faShoppingBag, faShoppingCart, faSquareCheck, faStar } from '@fortawesome/free-solid-svg-icons';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const HomeSectionCard = () => {
   return (
-    <div className='cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-lg overflow hidden w-[15rem] mx-3'>
-       
-       <div className="h-[13rem] w-[10rem]">
-        <img className='object-cover object-top w-full h-full' src="https://1.grgs.ro/images/products/1/5747/2288243/thumbnails/162-macbook-pro-16-liquid-retina-xdr-apple-m1-pro-chip-10-core-cpu-16gb-512gb-ssd-apple-m1-pro-16-core-gpu-macos-monterey-silver-int-keyboard-fb722d20be0909bc5063fea62f9dfb2a.jpg" alt="" />
-       </div>
-        
-        <div className="p-4">
-            <h3 className='text-lg font-medium text-gray-900'>Laptop Apple MacBook Pro 14" cu procesor Apple M2 Pro, 10 nuclee CPU and 16 nuclee GPU, 16 GB, 512GB SSD, Space Grey, INT KB</h3>
-        <p></p>
+    <div className="card swiper-slide">
+      <img className="card__img" src="https://s13emagst.akamaized.net/products/52534/52533125/images/res_2307341a5eea0c5a0a0a08651b509df3.jpg?width=450&height=450&hash=22572E7CBC686F70EEEE61FB614F2B6D" alt="" />
+      <p className="card__title">Apple Iphone 13,512GB, 5G, Purple </p>
+
+      <div className="card__details">
+        <div className="card__stock">
+          <FontAwesomeIcon icon={faSquareCheck} />
+          <p> in stock </p>
         </div>
+
+        <div className="card__stars">
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+        </div>
+
+        <p className="card__price">$1500</p>
+
+      </div>
+
+
+      <button className="card__button--buy">
+        <FontAwesomeIcon className="card_shopping" icon={faShoppingCart} />    </button>
+        <FavoriteBorderIcon className='card__fav' sx={{ fontSize: '2.5rem' }} />
     </div>
   )
 }

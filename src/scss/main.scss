@@ -1,37 +1,37 @@
 // // ABSTRACTS 
 
 
-// @import "abstracts/mixins";
+@import "abstracts/mixins";
 @import "abstracts/variables";
 
 
 // //BASE 
 
-// @import "base/animations";
-// @import "base/base";
-// @import "base/typography";
-// @import "base/utilities";
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
 
 // // COMPONENTS 
-// @import "components/button";
-// @import "components/card";
-// @import "components/search-box";
-// @import "components/segment";
-// @import "components/meniuBar";
+@import "components/button";
+@import "components/card";
 @import "components/navigation";
-// @import "components/category";
 @import "components/carousel";
+@import "components/searchBox";
+@import "components/meniuBar";
+
+
 
 
 
 // // LAYOUT
-// @import "layout/footer";
+@import "layout/footer";
 @import "layout/header";
-// @import "layout/posters";
-// @import "layout/mainarea";
-// @import "layout/advertisement";
+@import "layout/posters";
+@import "layout/mainarea";
+@import "layout/advertisement";
 
 // // PAGES 
-// @import "pages/home";
+@import "pages/home";
 
 

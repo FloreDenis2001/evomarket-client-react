@@ -1,0 +1,73 @@
+.arrow__button {
+    &.arrow__left {
+        position: absolute;
+        top: 10rem;
+        left: 0rem;
+        transform: translateX(-50%) rotate(90deg);
+        color: $color-white;
+        background-color: $color-primary;
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-primary;
+        }
+
+        .arrow__left-key {
+            transform: rotate(-90deg);
+        }
+    }
+
+    &.arrow__right {
+        position: absolute;
+        top: 10rem;
+        right: 0rem;
+        transform: translateX(50%) rotate(90deg);
+        color: $color-white;
+        background-color: $color-primary;
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-primary;
+        }
+
+        .arrow__right-key {
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+button {
+    border: none;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    font-family: $font-family-secondary;
+}
+
+.slick-next , .slick-prev {
+
+    
+    &::before{color: $color-primary !important;
+        font-size: 2.5rem !important;
+  }
+}
+
+
+
+
+.slick-dots .slick-active button{
+    &::before{color: $color-primary !important;
+    font-size: 1.6rem;}
+}
+
+
+.slick-dots li button{
+    &::before{color: $color-primary !important;
+        font-size: 1.6rem !important;}
+}
+
+.slick-slide{
+    display: flex !important;
+    align-content: center !important;
+    justify-content: center !important;
+}

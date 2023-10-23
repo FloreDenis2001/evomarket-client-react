@@ -1,0 +1,72 @@
+.advertisement {
+    background-color: $color-white;
+    padding: 5rem;
+    text-align: center;
+    min-height: 40rem;
+    @include respond(tab-port){
+        min-height: 30rem;
+    }
+    @include respond(phone){
+        min-height: 20rem;
+        padding: 2rem;
+    }
+ 
+   &__container{
+    background-color: $color-primary;
+    min-height: 40rem;
+    border-radius: 5rem;
+    background-image: url('../src/assets/svg/mainCarousel/5803426.jpg');
+    background-size: cover; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include respond(tab-land){
+        min-height: 30rem;
+    }
+    @include respond(tab-port){
+        min-height:20rem;
+    }
+
+    @include respond(phone){
+        min-height: 15rem;
+    }
+    &__post {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        min-height: 40rem;
+        &__motto{
+            color: white;
+            font-size: 6rem;
+            font-weight: 800;
+            @include respond(tab-port){
+                font-size: 3.5rem;
+            }
+            @include respond(phone){
+                font-size:2.5rem;
+            }
+        }
+        @include respond(tab-land){
+            min-height: 30rem;
+        }
+        @include respond(tab-port){
+            min-height:20rem;
+        }
+        @include respond(tab-port){
+            min-height:15rem;
+        }
+        &__describe{
+            color: white;
+            font-size: 2rem;
+            @include respond(tab-port){
+                font-size: 1.5rem;
+            }
+        }
+    }
+   }  
+
+ 
+}
+
+  
