@@ -50,7 +50,7 @@ export default class HomeSectionCarousel extends Component {
                     }
                 },
                 {
-                    breakpoint: 400,
+                    breakpoint: 380,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1

@@ -13,10 +13,16 @@ header {
     height: 10rem;
     margin-right: 1rem; 
     width: 20%;
+  
 }
 
 .logo img{
     filter: brightness(0) invert(100%);
+  
+    transition: all 0.2s;
+    
+    &:hover{
+        transform: rotate(360deg);
+    }
 
- 
 }

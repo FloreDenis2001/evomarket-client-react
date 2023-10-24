@@ -1,6 +1,6 @@
 import {  faBarsStaggered, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react'; // Don't forget to import useState
+import React, { useState } from 'react'; 
 
 const MeniuBar = () => {
     const [isProductsDropdownOpen, setProductsDropdownOpen] = useState(false);

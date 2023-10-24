@@ -106,7 +106,6 @@ button {
 }
 
 .card {
-  margin-left: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -883,6 +882,10 @@ header {
 
 .logo img {
   filter: brightness(0) invert(100%);
+  transition: all 0.2s;
+}
+.logo img:hover {
+  transform: rotate(360deg);
 }
 
 .advertisement {
