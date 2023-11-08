@@ -13,12 +13,15 @@
 @import "base/utilities";
 
 // // COMPONENTS 
+@import "components/carouselProduct";
 @import "components/button";
 @import "components/card";
 @import "components/navigation";
 @import "components/carousel";
 @import "components/searchBox";
 @import "components/meniuBar";
+@import "components/containerModal";
+
 
 
 
@@ -33,5 +36,6 @@
 
 // // PAGES 
 @import "pages/home";
+@import "pages/product";
 
 

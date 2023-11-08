@@ -1,0 +1,66 @@
+.product {
+    &__containerModal {
+        display: flex;
+        flex-direction: column;
+        padding: 3rem;
+        height: 100%;
+        gap: 3rem;
+
+
+        &__header {
+
+            display: flex;
+            flex-direction: column;
+
+
+            &__title {
+                font-size: 3rem;
+                color: $color-white;
+                font-weight: 600;
+            }
+
+            &__subtitle {
+                font-size: 1.4rem;
+                color: $color-white;
+            }
+
+            &__price {
+                margin-block: 1rem;
+                font-size: 3rem;
+                color: $color-primary;
+                font-weight: 800;
+                font-family: $font-family-secondary;
+            }
+        }
+
+        &__filter {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+
+        }
+
+        &__filterSection{
+            margin-top: 1rem;
+            color: $color-white;
+        }
+
+        &__item {
+            font-size: 2rem;
+            color: $color-white;
+
+            &__active {
+                font-size: 2rem;
+                color: $color-primary;
+                border-bottom: 1px solid $color-secondary;
+            }
+        }
+
+
+        &__inputBox {
+            margin-top: 2rem;
+        }
+    }
+
+
+}

@@ -42,32 +42,55 @@ button {
     font-weight: 600;
     letter-spacing: 0.1rem;
     font-family: $font-family-secondary;
+
+
 }
 
-.slick-next , .slick-prev {
+.slick-next,
+.slick-prev {
 
-    
-    &::before{color: $color-primary !important;
+
+    &::before {
+        color: $color-primary !important;
         font-size: 2.5rem !important;
-  }
+    }
 }
 
 
 
 
-.slick-dots .slick-active button{
-    &::before{color: $color-primary !important;
-    font-size: 1.6rem;}
+.slick-dots .slick-active button {
+    &::before {
+        color: $color-primary !important;
+        font-size: 1.6rem;
+    }
 }
 
 
-.slick-dots li button{
-    &::before{color: $color-primary !important;
-        font-size: 1.6rem !important;}
+.slick-dots li button {
+    &::before {
+        color: $color-primary !important;
+        font-size: 1.6rem !important;
+    }
 }
 
-.slick-slide{
+.slick-slide {
     display: flex !important;
     align-content: center !important;
     justify-content: center !important;
+}
+
+
+.btn {
+
+    &__primary {
+        background-image: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%);
+        font-size: 2rem;
+        color: white;
+        font-weight: 500;
+        padding: 0.5rem;
+        border-radius: 1rem;
+    }
+
+
 }

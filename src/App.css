@@ -45,6 +45,21 @@ img {
   max-height: 70%;
 }
 
+p {
+  margin: 0;
+}
+
+.product__carouselImages {
+  display: flex;
+  align-items: center;
+  max-width: 40%;
+}
+.product__image {
+  height: 40rem;
+  width: 100%;
+  border-radius: 1rem;
+}
+
 .arrow__button.arrow__left {
   position: absolute;
   top: 10rem;
@@ -84,7 +99,8 @@ button {
   font-family: "Red Hat Display", sans-serif;
 }
 
-.slick-next::before, .slick-prev::before {
+.slick-next::before,
+.slick-prev::before {
   color: #fa4e4c !important;
   font-size: 2.5rem !important;
 }
@@ -103,6 +119,15 @@ button {
   display: flex !important;
   align-content: center !important;
   justify-content: center !important;
+}
+
+.btn__primary {
+  background-image: linear-gradient(0deg, #fa4e4c 0%, #ff7f7b 100%);
+  font-size: 2rem;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 1rem;
 }
 
 .card {
@@ -414,9 +439,6 @@ button {
   color: #fa4e4c;
 }
 
-.carousel {
-  background-color: #141414;
-}
 .carousel__category {
   margin-top: 2rem;
   display: flex;
@@ -619,6 +641,55 @@ button {
   padding-top: 1rem;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.product__containerModal {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  height: 100%;
+  gap: 3rem;
+}
+.product__containerModal__header {
+  display: flex;
+  flex-direction: column;
+}
+.product__containerModal__header__title {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+.product__containerModal__header__subtitle {
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+.product__containerModal__header__price {
+  margin-block: 1rem;
+  font-size: 3rem;
+  color: #fa4e4c;
+  font-weight: 800;
+  font-family: "Red Hat Display", sans-serif;
+}
+.product__containerModal__filter {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.product__containerModal__filterSection {
+  margin-top: 1rem;
+  color: #ffffff;
+}
+.product__containerModal__item {
+  font-size: 2rem;
+  color: #ffffff;
+}
+.product__containerModal__item__active {
+  font-size: 2rem;
+  color: #fa4e4c;
+  border-bottom: 1px solid #ff7f7b;
+}
+.product__containerModal__inputBox {
+  margin-top: 2rem;
 }
 
 .footer {
@@ -975,6 +1046,20 @@ header {
   .advertisement__container__post__describe {
     font-size: 1.5rem;
   }
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product__modal {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 80%;
+  border-radius: 1rem;
+  background: #141E46;
 }
 
 /*# sourceMappingURL=App.css.map */
