@@ -1,7 +1,7 @@
 import React from 'react'
 import MainCarousel from '../components/HomeCarousel/MainCarousel'
-import HomeSectionCarousel from '../components/HomeSectionCarousel/HomeSectionCarousel'
 import Advertisement from '../components/ui/Advertisement'
+import HomeSectionCarousel from '../components/HomeSectionCarousel/HomeSectionCarousel'
 
 const Home = () => {
   return (
