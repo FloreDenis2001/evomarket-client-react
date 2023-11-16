@@ -2,23 +2,23 @@ import { createSelector } from "@reduxjs/toolkit";
 import { ProductState } from "./products.reducers";
 
 interface RootState {
-    productState: ProductState,
+    productsState: ProductState,
 }
 
-const selectProductState = (state: RootState) => state.productState;
+const selectProductsState = (state: RootState) => state.productsState;
 
 export const selectProducts = createSelector(
-    selectProductState,
-    (productState?): typeof productState.products => productState.products
+    selectProductsState,
+    (productsState?): typeof productsState.products => productsState.products
 )
 
 export const selectRetrieveProductState = createSelector(
-    selectProductState,
-    (productState?): typeof productState.retriveProductState => productState.retriveProductState
+    selectProductsState,
+    (productsState?): typeof productsState.retriveProductState => productsState.retriveProductState
 )
 
 export const selectAddProductState = createSelector(
-    selectProductState,
-    (productState?): typeof productState.addProductState => productState.addProductState
+    selectProductsState,
+    (productsState?): typeof productsState.addProductState => productsState.addProductState
 )
 

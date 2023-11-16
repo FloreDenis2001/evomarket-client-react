@@ -9,6 +9,10 @@
   position: relative;
  }
 
+ &-container{
+   max-width: 80%;
+   align-self: center;
+ }
 
   &__cards{
     margin-top: 2rem;
@@ -21,10 +25,17 @@
     left: 10%;
     font-size: 3rem;
     padding-inline: 1.5rem;
+
+    color:$color-white
   }
 }
 
 .image-container img{
-  max-height: 40rem;
   object-fit:contain;
+}
+
+
+.slick-track{
+  padding-block: 2rem;
+  background-color: $color-black;
 }

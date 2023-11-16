@@ -29,12 +29,12 @@ html {
   width: 100%;
   height: 100%;
   font-size: 62.5%;
-  background-color: rgb(255, 255, 255);
+  background-color: #141414;
 }
 
 body {
   box-sizing: border-box;
-  background-color: #ffffff;
+  background-color: #141414;
   font-family: "Red Hat Display", sans-serif;
   font-weight: 400;
   overflow-x: hidden;
@@ -52,11 +52,13 @@ p {
 .product__carouselImages {
   display: flex;
   align-items: center;
-  max-width: 40%;
+  max-width: 30%;
+  max-height: 50rem;
 }
 .product__image {
-  height: 40rem;
+  height: 30rem;
   width: 100%;
+  max-width: 40rem;
   border-radius: 1rem;
 }
 
@@ -137,7 +139,8 @@ button {
   align-items: flex-start;
   position: relative;
   border-radius: 0.5rem;
-  background-color: #ebe8e8;
+  background-color: #141414;
+  box-shadow: rgba(250, 78, 76, 0.3) 0px 1px 2px 0px, rgba(250, 78, 76, 0.15) 0px 1px 3px 1px;
   min-width: 20rem;
   max-width: 20rem;
   min-height: 25rem;
@@ -172,8 +175,9 @@ button {
 }
 .card__img {
   min-width: 100%;
-  height: 15rem;
+  max-height: 15rem;
   border-radius: 0.5rem;
+  object-fit: fill;
 }
 @media only screen and (max-width: 75em) {
   .card__img {
@@ -182,22 +186,19 @@ button {
 }
 @media only screen and (max-width: 56.25em) {
   .card__img {
-    margin-inline: 25%;
-    min-width: 50%;
-    max-width: 60%;
-    height: 8rem;
+    height: 10rem;
   }
 }
 @media only screen and (max-width: 37.5em) {
   .card__img {
-    height: 9rem;
+    height: 10rem;
   }
 }
 .card__title {
   align-self: center;
   margin-left: 0.5rem;
   padding-block: 0.4rem;
-  color: #141414;
+  color: #ffffff;
   font-size: 1.9rem;
   font-weight: 500;
   white-space: pre-wrap;
@@ -257,8 +258,9 @@ button {
   margin-top: 0.5rem;
   margin-left: 0.5rem;
   font-size: 1.6rem;
-  grid-row: 4/5;
-  grid-column: 1/2;
+}
+.card__stars span {
+  color: goldenrod;
 }
 @media only screen and (max-width: 75em) {
   .card__stars {
@@ -275,9 +277,6 @@ button {
     font-size: 1.3rem;
     font-weight: 700;
   }
-}
-.card__stars > * {
-  color: goldenrod;
 }
 .card__price {
   display: flex;
@@ -447,6 +446,10 @@ button {
   padding-block: 5rem;
   position: relative;
 }
+.carousel-container {
+  max-width: 80%;
+  align-self: center;
+}
 .carousel__cards {
   margin-top: 2rem;
   max-width: 80%;
@@ -457,11 +460,16 @@ button {
   left: 10%;
   font-size: 3rem;
   padding-inline: 1.5rem;
+  color: #ffffff;
 }
 
 .image-container img {
-  max-height: 40rem;
   object-fit: contain;
+}
+
+.slick-track {
+  padding-block: 2rem;
+  background-color: #141414;
 }
 
 .search-box {
@@ -642,52 +650,52 @@ button {
   align-items: flex-start;
 }
 
-.product__containerModal {
+.product__container {
   display: flex;
   flex-direction: column;
   padding: 3rem;
   height: 100%;
   gap: 3rem;
 }
-.product__containerModal__header {
+.product__container__header {
   display: flex;
   flex-direction: column;
 }
-.product__containerModal__header__title {
+.product__container__header__title {
   font-size: 3rem;
   color: #ffffff;
   font-weight: 600;
 }
-.product__containerModal__header__subtitle {
+.product__container__header__subtitle {
   font-size: 1.4rem;
   color: #ffffff;
 }
-.product__containerModal__header__price {
+.product__container__header__price {
   margin-block: 1rem;
   font-size: 3rem;
   color: #fa4e4c;
   font-weight: 800;
   font-family: "Red Hat Display", sans-serif;
 }
-.product__containerModal__filter {
+.product__container__filter {
   display: flex;
   flex-direction: row;
   gap: 1rem;
 }
-.product__containerModal__filterSection {
+.product__container__filterSection {
   margin-top: 1rem;
   color: #ffffff;
 }
-.product__containerModal__item {
+.product__container__item {
   font-size: 2rem;
   color: #ffffff;
 }
-.product__containerModal__item__active {
+.product__container__item__active {
   font-size: 2rem;
   color: #fa4e4c;
   border-bottom: 1px solid #ff7f7b;
 }
-.product__containerModal__inputBox {
+.product__container__inputBox {
   margin-top: 2rem;
 }
 .product__card {
@@ -961,8 +969,13 @@ header {
   transform: rotate(360deg);
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 .advertisement {
-  background-color: #ffffff;
+  background-color: #141414;
   padding: 5rem;
   text-align: center;
   min-height: 40rem;
@@ -1052,17 +1065,22 @@ header {
 
 .product {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
 }
-.product__modal {
+.product__containerPage {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  width: 80%;
-  max-width: 95rem;
-  height: 80%;
-  border-radius: 1rem;
-  background: #141E46;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding-block: 5rem;
+}
+
+.productPage {
+  display: flex;
+  flex-direction: column;
+  background-color: #141414;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -1,6 +1,9 @@
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
+import Product from '../../models/Product/Product';
+
+
 
 const ProductContainerModal = () => {
   const [activeFilter, setActiveFilter] = useState('DESCRIPTION');
@@ -32,19 +35,19 @@ const ProductContainerModal = () => {
 
 
   return (
-    <div className='product__containerModal'>
-      <div className="product__containerModal__header">
-        <h3 className='product__containerModal__header__title'>Iphone 13 PRO Max </h3>
-        <span className='product__containerModal__header__subtitle'>Phones Category</span>
-        <p className="product__containerModal__header__price">$660.00</p>
+    <div className='product__container'>
+      <div className="product__container__header">
+        <h3 className='product__container__header__title'>Iphone 13 PRO Max </h3>
+        <span className='product__container__header__subtitle'>Phones Category</span>
+        <p className="product__container__header__price">$660.00</p>
       </div>
 
-      <div className="product__containerModal__main">
-        <div className="product__containerModal__filter">
+      <div className="product__container__main">
+        <div className="product__container__filter">
           {['DESCRIPTION','SPECIFICATION','BENEFITS','DELIVERY'].map((filter) => (
             <span
               key={filter}
-              className={`product__containerModal__item${activeFilter === filter ? '__active' : ''}`}
+              className={`product__container__item${activeFilter === filter ? '__active' : ''}`}
               onClick={() => setActiveFilter(filter)}
             >
               {filter}
@@ -52,7 +55,7 @@ const ProductContainerModal = () => {
           ))}
         </div>
 
-        <div className="product__containerModal__filterSection">
+        <div className="product__container__filterSection">
           {filteredProjects.map((product, index) => (
             <div key={index} className='product__card'>
               <p>{product.text}</p>
@@ -61,7 +64,7 @@ const ProductContainerModal = () => {
         </div>
       </div>
 
-      <div className="product__containerModal__inputBox">
+      <div className="product__container__inputBox">
         <button className='btn__primary'><FontAwesomeIcon icon={faShoppingBag} /> Add Cart</button>
       </div>
     </div>
