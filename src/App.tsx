@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import ProductPage from './pages/ProductPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ProductAdd from './components/ProductAddForm';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path='/product/:productSKU' element={<ProductPage/>}/>
+      <Route path='/product/add' element={<ProductAdd/>}/>
       </Routes>
       </BrowserRouter>
       <Footer/>

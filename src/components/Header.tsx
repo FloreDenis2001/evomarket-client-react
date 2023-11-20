@@ -1,6 +1,6 @@
 import React from 'react'
 import NavigationScreen from './Navigation/NavigationScreen'
-import MeniuBar from './ui/MeniuBar'
+import MeniuBar from './MeniuBar'
 import NavigationMobile from './Navigation/NavigationMobile'
 
 const Header = () => {

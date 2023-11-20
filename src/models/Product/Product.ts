@@ -2,7 +2,7 @@ export default interface Product{
     name:string,
     description:string,
     price:number,
-    readonly SKU :string,
+    sku :string,
     quantity:number,
     weight:number,
     category:string,

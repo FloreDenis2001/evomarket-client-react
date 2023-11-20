@@ -12,7 +12,6 @@
 
     min-height: 25rem;
 
-
     @include respond (tab-land) {
 
         min-width: 20rem;
@@ -47,6 +46,13 @@
         max-height: 15rem;
         border-radius: 0.5rem;
         object-fit: fill;
+
+        &:hover{
+            transform: scale(1.1);
+            transition: all 0.5s ease-in-out;
+            overflow: hidden;
+            object-fit: fill;
+        }
 
         @include respond (tab-land) {
 

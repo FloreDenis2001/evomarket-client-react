@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import { mainCarouselData } from '../MainCaoruselData';
+import { mainCarouselData } from './MainCaoruselData';
 
 
 const ProductCarouseImages = () => {

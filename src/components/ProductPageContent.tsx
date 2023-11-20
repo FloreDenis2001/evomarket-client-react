@@ -1,17 +1,19 @@
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
-import Product from '../../models/Product/Product';
+import Product from '../models/Product/Product';
 
+interface ProdcutContainer {
+  product: Product;
+}
 
-
-const ProductContainerModal = () => {
+const ProductContainerModal : React.FC<ProdcutContainer> = ({ product }) => {
   const [activeFilter, setActiveFilter] = useState('DESCRIPTION');
 
   const projectData = [
     {
       title: 'DESCRIPTION',
-      text: "DESCRIPTION Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quia, repellendus earum eaque veritatis voluptatibus quae debitis nemo blanditiis? Veniam exercitationem, velit aliquam maiores quibusdam possimus dolore! Adipisci, recusandae aspernatur!",
+      text: product.description,
     },
     {
       title: 'SPECIFICATION',
@@ -33,18 +35,22 @@ const ProductContainerModal = () => {
 
   const filteredProjects = projectData.filter((project) => project.title === activeFilter);
 
+  function handleAddShoppingBag(){
+    console.log('add shopping bag')
+  }
+
 
   return (
     <div className='product__container'>
       <div className="product__container__header">
-        <h3 className='product__container__header__title'>Iphone 13 PRO Max </h3>
-        <span className='product__container__header__subtitle'>Phones Category</span>
-        <p className="product__container__header__price">$660.00</p>
+        <h3 className='product__container__header__title'>{product.name} </h3>
+        <span className='product__container__header__subtitle'>{product.category}</span>
+        <p className="product__container__header__price">${product.price}</p>
       </div>
 
       <div className="product__container__main">
         <div className="product__container__filter">
-          {['DESCRIPTION','SPECIFICATION','BENEFITS','DELIVERY'].map((filter) => (
+          {['DESCRIPTION', 'SPECIFICATION', 'BENEFITS', 'DELIVERY'].map((filter) => (
             <span
               key={filter}
               className={`product__container__item${activeFilter === filter ? '__active' : ''}`}
@@ -65,7 +71,7 @@ const ProductContainerModal = () => {
       </div>
 
       <div className="product__container__inputBox">
-        <button className='btn__primary'><FontAwesomeIcon icon={faShoppingBag} /> Add Cart</button>
+        <button onClick={()=>handleAddShoppingBag()} className='btn__primary'><FontAwesomeIcon icon={faShoppingBag} /> Add Cart</button>
       </div>
     </div>
   );

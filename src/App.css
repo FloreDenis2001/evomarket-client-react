@@ -179,6 +179,12 @@ button {
   border-radius: 0.5rem;
   object-fit: fill;
 }
+.card__img:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  object-fit: fill;
+}
 @media only screen and (max-width: 75em) {
   .card__img {
     height: 15rem;

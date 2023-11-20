@@ -1,5 +1,5 @@
 import React from 'react';
-import { mainCarouselData } from '../MainCaoruselData';
+import { mainCarouselData } from './MainCaoruselData';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 const MainCarousel = () => {
