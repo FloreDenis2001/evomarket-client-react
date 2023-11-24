@@ -6,7 +6,8 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import ProductPage from './pages/ProductPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ProductAdd from './components/ProductAddForm';
+import ProductAddForm from './components/Product/ProductAddForm';
+import ProductRemoveForm from './components/Product/ProductRemoveForm';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path='/product/:productSKU' element={<ProductPage/>}/>
-      <Route path='/product/add' element={<ProductAdd/>}/>
+      <Route path='/product/add' element={<ProductAddForm/>}/>
+      <Route path='/product/edit/:productSKU' element={<ProductRemoveForm/>}/>
       </Routes>
       </BrowserRouter>
       <Footer/>

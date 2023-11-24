@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import ProductCarouseImages from '../components/ProductCarouseImages'
-import ProductPageContent from '../components/ProductPageContent'
-import HomeSectionCarousel from '../components/CarouselProducts'
+import ProductCarouseImages from '../components/Product/ProductCarouseImages'
+import ProductPageContent from '../components/Product/ProductPageContent'
+import HomeSectionCarousel from '../components/Product/CarouselProducts'
 import { useParams } from 'react-router'
 import ServiceProduct from '../services/ServiceProduct'
 import Product from '../models/Product/Product'
@@ -13,10 +13,6 @@ const ProductPage = () => {
   const { productSKU } = useParams();
   const [product, setProduct] = useState<Product>();
   const serviceProduct = new ServiceProduct();
-
-  // const products = useSelector(selectProducts);
-  // const retriveState = useSelector(selectRetrieveProductState);
-  // const dispatch = useDispatch();
 
 
   const getProduct = async (): Promise<void> => {

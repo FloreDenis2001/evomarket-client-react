@@ -21,4 +21,12 @@ export const selectAddProductState = createSelector(
     selectProductsState,
     (productsState?): typeof productsState.addProductState => productsState.addProductState
 )
+export const selectRemoveProductState = createSelector(
+    selectProductsState,
+    (productsState?): typeof productsState.removeProductState => productsState.removeProductState
+)
+export const selectUpdateProductState = createSelector(
+    selectProductsState,
+    (productsState?): typeof productsState.updateProductState => productsState.updateProductState
+)
 

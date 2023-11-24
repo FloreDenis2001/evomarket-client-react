@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ServiceProduct from '../services/ServiceProduct';
+import ServiceProduct from '../../services/ServiceProduct';
 import { ProductCart } from './ProductCard';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectProducts, selectRetrieveProductState } from '../store/product/products.selectors';
-import { LoadingState } from '../ActionTypes/LoadingState';
-import { retriveProductsError, retriveProductsLoading, retriveProductsSucces, loadProducts } from '../store/product/products.reducers';
+import { selectProducts, selectRetrieveProductState } from '../../store/product/products.selectors';
+import { LoadingState } from '../../ActionTypes/LoadingState';
+import { retriveProductsError, retriveProductsLoading, retriveProductsSucces, loadProducts } from '../../store/product/products.reducers';
 import { Link } from 'react-router-dom';
 
 const HomeSectionCarousel: React.FC = () => {

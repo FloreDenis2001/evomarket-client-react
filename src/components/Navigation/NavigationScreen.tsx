@@ -4,13 +4,9 @@ import React from 'react'
 import SearchBox from '../SearchBox'
 import Logo from '../Logo'
 import NavigationItemCard from './NavigationItemCard'
+import { useNavigate } from 'react-router-dom'
 
 const NavigationScreen = () => {
-
-
-    function handleAddProduct(){
-        console.log('add product')
-    }
     return (
         <header>
             <Logo />
@@ -20,8 +16,6 @@ const NavigationScreen = () => {
                  <NavigationItemCard title={"My Account"}  icon={faUser} />
                  <NavigationItemCard title={"Favourite"}  icon={faHeart} />
                  <NavigationItemCard title={"Cart"}  icon={faShoppingBag} />
-                 
-                 <button onClick={handleAddProduct}>Add Product</button>
                 </ul>
             </div>
         </header>

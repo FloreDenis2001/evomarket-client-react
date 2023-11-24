@@ -17,7 +17,7 @@ const productInitialState: ProductState = {
     retriveProductState: LoadingState.NONE,
     addProductState: LoadingState.NONE,
     removeProductState:LoadingState.NONE,
-    updateProductState:LoadingState.NONE
+    updateProductState:LoadingState.NONE,
 }
 
 const productSlice = createSlice({
@@ -72,10 +72,16 @@ const productSlice = createSlice({
         updateProductSucces(state,action:PayloadAction<void>){
             state.updateProductState = LoadingState.SUCCES;
         },
+        refreshProductState(state, action:PayloadAction<void>){
+            state.addProductState = LoadingState.NONE;
+            state.retriveProductState = LoadingState.NONE;
+            state.removeProductState = LoadingState.NONE;
+            state.updateProductState = LoadingState.NONE;
+        }
     }
 
 
 
 })
-export const { loadProducts, retriveProductsError, retriveProductsLoading, retriveProductsSucces ,addProduct,addProductError,addProductLoading,addProductSucces,updateProduct,updateProductError,updateProductLoading,updateProductSucces,removeProduct,removeProductError,removeProductLoading,removeProductSucces} = productSlice.actions;
+export const { loadProducts, retriveProductsError, retriveProductsLoading, retriveProductsSucces ,addProduct,addProductError,addProductLoading,addProductSucces,updateProduct,updateProductError,updateProductLoading,updateProductSucces,removeProduct,removeProductError,removeProductLoading,removeProductSucces,refreshProductState} = productSlice.actions;
 export default productSlice.reducer;

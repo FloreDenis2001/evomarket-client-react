@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Product from "../models/Product/Product";
+import Product from "../../models/Product/Product";
 import {
   faCircleXmark,
   faShoppingCart,
@@ -7,7 +7,7 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import useProduct from "../hooks/useProduct";
+import useProduct from "../../hooks/useProduct";
 import Rating from "@mui/material/Rating";
 
 interface ProductProps {

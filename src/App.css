@@ -130,6 +130,7 @@ button {
   font-weight: 500;
   padding: 0.5rem;
   border-radius: 1rem;
+  margin-right: 2rem;
 }
 
 .card {
@@ -706,6 +707,10 @@ button {
 }
 .product__card {
   max-width: 54rem;
+}
+
+.notification {
+  color: white;
 }
 
 .footer {
