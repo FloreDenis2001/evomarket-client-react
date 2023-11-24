@@ -14,11 +14,14 @@ import {
   addProductSucces,
 } from "../../store/product/products.reducers";
 import { LoadingState } from "../../ActionTypes/LoadingState";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
+import { useNavigate } from "react-router-dom";
 
 const ProductAddForm = () => {
   const retriveAddState = useSelector(selectAddProductState);
   const dispatch = useDispatch();
-
+  let nav = useNavigate();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
@@ -56,6 +59,9 @@ const ProductAddForm = () => {
       console.log(productsData);
       dispatch(addProductSucces());
       dispatch(addProduct(productsData));
+      setTimeout(() => {
+        nav("/");
+      }, 2500);
     } catch (error) {
       dispatch(addProductError());
     }
@@ -111,10 +117,16 @@ const ProductAddForm = () => {
         }}
       />
       {retriveAddState === LoadingState.SUCCES && (
-        <p className="notification__succes" >Produsul a fost adaugat cu succes !</p>
+        <Alert severity="success">
+          <AlertTitle>Success</AlertTitle>
+          This product was added— <strong>check it out!</strong>
+        </Alert>
       )}
       {retriveAddState === LoadingState.ERROR && (
-        <p className="notification__error">Produsul nu a fost inregistrat !</p>
+        <Alert severity="error">
+          <AlertTitle>Error</AlertTitle>
+          This product can't be added <strong>check it out!</strong>
+        </Alert>
       )}
       <button onClick={() => handleAddProduct()}>Add Product</button>
     </div>
