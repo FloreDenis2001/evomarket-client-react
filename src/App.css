@@ -49,6 +49,19 @@ p {
   margin: 0;
 }
 
+.modal-overlay {
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .product__carouselImages {
   display: flex;
   align-items: center;
@@ -175,10 +188,12 @@ button {
   transform: translateY(-0.5rem);
 }
 .card__img {
-  min-width: 100%;
+  align-self: center;
+  min-width: 80%;
   max-height: 15rem;
   border-radius: 0.5rem;
   object-fit: fill;
+  padding: 1rem;
 }
 .card__img:hover {
   transform: scale(1.1);
@@ -352,7 +367,7 @@ button {
   position: absolute;
   right: 0.2rem;
   top: 0.3rem;
-  color: #141414;
+  color: #ffffff;
 }
 @media only screen and (max-width: 56.25em) {
   .card__fav {
@@ -711,6 +726,229 @@ button {
 
 .notification {
   color: white;
+}
+
+.bag__list {
+  width: 35rem;
+  max-width: 40%;
+  height: 100%;
+  background-color: #141414;
+  padding: 20px;
+  box-shadow: 0 0 10px #fa4e4c;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff;
+}
+.bag__list__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+.bag__list__nav__close {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.bag__list__nav__close:hover {
+  color: #fa4e4c;
+}
+.bag__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.bag__footer__total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.bag__footer__total__price {
+  color: #fa4e4c;
+  font-weight: 700;
+}
+.bag__footer__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.bag__footer__button__checkout {
+  width: 100%;
+  height: 5rem;
+  background-color: transparent;
+  color: #fa4e4c;
+  border: 1px solid #fa4e4c;
+  font-size: 1.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding-inline: 2rem;
+  transition: all 0.3s;
+  text-align: center;
+  text-transform: uppercase;
+}
+.bag__footer__button__checkout:hover {
+  background-color: #fa4e4c;
+  color: #ffffff;
+}
+.bag__footer__button__viewCart {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.bag__containerItem {
+  display: flex;
+  align-items: center;
+  margin-block: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  height: 10rem;
+  position: relative;
+  box-shadow: 0 0 7px rgb(60, 61, 66);
+}
+.bag__containerItem:hover {
+  box-shadow: 0 0 10px #fa4e4c;
+}
+.bag__containerItem__image {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  padding-inline: 1rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bag__containerItem__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.bag__containerItem__info {
+  margin-block: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding-inline: 2rem;
+  width: 100%;
+  height: 100%;
+}
+.bag__containerItem__info__title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.bag__containerItem__info__price {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fa4e4c;
+}
+.bag__containerItem__info__quantity {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+.bag__containerItem__info__remove {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: absolute;
+  right: 0.7rem;
+  top: 0.5rem;
+}
+.bag__containerItem__info__remove:hover {
+  color: #fa4e4c;
+}
+.bag__containerItem__info__qp {
+  margin-block: 0.2rem;
+}
+.bag__quantity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.bag__quantity label {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+}
+.bag__quantity__button {
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(60, 61, 66);
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.bag__quantity__button:hover {
+  background-color: #fa4e4c;
+}
+.bag__table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 50rem;
+  max-width: 50%;
+  background-color: white;
+}
+.bag__table__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid rgb(60, 61, 66);
+}
+.bag__table__head tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+.bag__table__head th {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fa4e4c;
+}
+.bag__table__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid rgb(60, 61, 66);
+}
+.bag__table__body tr {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1rem;
+}
+.bag__table__body td {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fa4e4c;
 }
 
 .footer {

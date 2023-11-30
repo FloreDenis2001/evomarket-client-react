@@ -1,8 +1,19 @@
 import { faEdit, faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Product from "../../models/Product/Product";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {
+  addProductOnBag,
+  addProductOnBagError,
+  addProductOnBagLoading,
+  addProductOnBagSucces,
+  loadBag,
+  retriveBagError,
+  retriveBagLoading,
+} from "../../store/bag/bag.reducers";
+import ProductBag from "../../models/Product/ProductBag";
 
 interface ProdcutContainer {
   product: Product;
@@ -11,7 +22,16 @@ interface ProdcutContainer {
 const ProductContainerModal: React.FC<ProdcutContainer> = ({ product }) => {
   const [activeFilter, setActiveFilter] = useState("DESCRIPTION");
   let nav = useNavigate();
+  const dispatch = useDispatch();
 
+  const [productBag, setProductBag] = useState<ProductBag>({
+    product: product,
+    quantity: 1,
+  } as ProductBag);
+
+  useEffect(() => {
+    setProductBag({ quantity: 1, product: product });
+  }, [product]);
 
   const projectData = [
     {
@@ -40,11 +60,15 @@ const ProductContainerModal: React.FC<ProdcutContainer> = ({ product }) => {
     (project) => project.title === activeFilter
   );
 
-  function handleAddShoppingBag() {
-    console.log("add shopping bag");
-  }
-
-
+  const handleAddShoppingBag = async (): Promise<void> => {
+    dispatch(addProductOnBagLoading());
+    try {
+      dispatch(addProductOnBag(productBag));
+      dispatch(addProductOnBagSucces());
+    } catch (error) {
+      dispatch(addProductOnBagError());
+    }
+  };
 
   return (
     <div className="product__container">
@@ -88,9 +112,7 @@ const ProductContainerModal: React.FC<ProdcutContainer> = ({ product }) => {
         </button>
 
         <Link key={product.sku} to={`/product/edit/${product.sku}`}>
-          <button
-            className="btn__primary"
-          >
+          <button className="btn__primary">
             <FontAwesomeIcon icon={faEdit} /> Edit Product
           </button>
         </Link>

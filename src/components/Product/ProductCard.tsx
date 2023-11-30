@@ -9,7 +9,6 @@ import {
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import useProduct from "../../hooks/useProduct";
 import Rating from "@mui/material/Rating";
-
 interface ProductProps {
   product: Product;
 }
@@ -21,7 +20,7 @@ export const ProductCart: React.FC<ProductProps> = ({ product }) => {
     <div className="card swiper-slide">
       <img
         className="card__img"
-        src="https://s13emagst.akamaized.net/products/52534/52533125/images/res_2307341a5eea0c5a0a0a08651b509df3.jpg?width=450&height=450&hash=22572E7CBC686F70EEEE61FB614F2B6D"
+        src="https://i.imgur.com/qFoHc8W.png"
         alt=""
       />
       <p className="card__title">{product.name}</p>
