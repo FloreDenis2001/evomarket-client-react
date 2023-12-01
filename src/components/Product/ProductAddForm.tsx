@@ -19,6 +19,8 @@ import AlertTitle from "@mui/material/AlertTitle";
 import { useNavigate } from "react-router-dom";
 
 const ProductAddForm = () => {
+
+
   const retriveAddState = useSelector(selectAddProductState);
   const dispatch = useDispatch();
   let nav = useNavigate();
@@ -29,6 +31,8 @@ const ProductAddForm = () => {
   const [weight, setWeight] = useState(0);
   const [category, setCategory] = useState("");
 
+  let serviceProduct = new ServiceProduct();
+
   const [productAdded, setAddProduct] = useState<Product>({
     name: "",
     description: "",
@@ -38,7 +42,7 @@ const ProductAddForm = () => {
     weight: 0,
   } as Product);
 
-  let serviceProduct = new ServiceProduct();
+ 
 
   useEffect(() => {
     let product = {

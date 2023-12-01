@@ -1,0 +1,318 @@
+.bag {
+  &__main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-block: 10rem;
+  }
+  &__list {
+    width: 35rem;
+    max-width: 40%;
+    height: 100%;
+    background-color: $color-black;
+    padding: 20px;
+    box-shadow: 0 0 10px $color-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $color-white;
+
+    &__nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 2rem;
+
+      &__close {
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+
+    &__total {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+
+      &__price {
+        color: $color-primary;
+        font-weight: 700;
+      }
+    }
+
+    &__button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      &__checkout {
+        width: 100%;
+        height: 5rem;
+        background-color: transparent;
+        color: $color-primary;
+        border: 1px solid $color-primary;
+        font-size: 1.7rem;
+        font-weight: 700;
+        cursor: pointer;
+        padding-inline: 2rem;
+        transition: all 0.3s;
+        text-align: center;
+        text-transform: uppercase;
+
+        &:hover {
+          background-color: $color-primary;
+          color: $color-white;
+        }
+      }
+
+      &__viewCart {
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__containerItem {
+    display: flex;
+    align-items: center;
+    margin-block: 2rem;
+    border-radius: 1rem;
+    width: 100%;
+    height: 10rem;
+    position: relative;
+    box-shadow: 0 0 7px $color-bg;
+
+    &:hover {
+      box-shadow: 0 0 10px $color-primary;
+    }
+
+    &__image {
+      display: flex;
+      align-items: center;
+      width: 40%;
+      height: 100%;
+      padding-inline: 1rem;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+    }
+
+    &__info {
+      margin-block: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      padding-inline: 2rem;
+      width: 100%;
+      height: 100%;
+
+      &__title {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      &__price {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: $color-primary;
+      }
+      &__quantity {
+        font-size: 1.5rem;
+        color: $color-white;
+      }
+
+      &__remove {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: $color-white;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: absolute;
+        right: 0.7rem;
+        top: 0.5rem;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+
+      &__qp {
+        margin-block: 0.2rem;
+      }
+    }
+  }
+  &__quantity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    label {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      color: $color-white;
+    }
+
+    &__button {
+      width: 2rem;
+      height: 2rem;
+      background-color: $color-bg;
+      color: $color-white;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      border-radius: 5rem;
+      text-align: center;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+  }
+
+  &__cart {
+    width: 60%;
+    max-width: 70%;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      color: $color-white;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+
+      th {
+        padding: 1rem;
+        color: white;
+        background-color: $color-primary;
+      }
+
+      tr {
+        img {
+          align-self: flex-start;
+          width: 8rem;
+          height: 8rem;
+          object-fit: fill;
+          margin-inline: 2rem;
+        }
+      }
+
+      td {
+        padding: 1rem;
+      }
+    }
+
+    &__total {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-between;
+      max-width: 30%;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      tbody {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 20rem;
+      }
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $color-white;
+        text-transform: uppercase;
+      }
+      tr {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        font-weight: 500;
+      }
+
+      td {
+        color: $color-secondary;
+      }
+      th {
+        color: $color-white;
+      }
+  
+      
+      
+    
+    }
+  }
+
+  &__item {
+    &__remove {
+      background-color: $color-bg;
+      font-size: 1.5rem;
+      padding-inline: 0.7rem;
+      border-radius: 3rem;
+
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+
+    &__info {
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__quantity {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-inline: 1rem;
+      label {
+        margin-inline: 1rem;
+      }
+    }
+  }
+
+  &__shoppingOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+}
+
+
+
+
