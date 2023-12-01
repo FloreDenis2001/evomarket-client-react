@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectBag } from "../../store/bag/bag.selectors";
 import ShippingOptions from "./ShippingOptions";
+import { useNavigate } from "react-router-dom";
 
 const CartTotals: React.FC = () => {
   const bag = useSelector(selectBag);
-  const [selectedShippingOption, setSelectedShippingOption] = useState<string>("Flat rate");
-
+  const [selectedShippingOption, setSelectedShippingOption] =
+  useState<string>("Flat rate");
+  let nav = useNavigate();
   let total = bag.reduce((acc, product) => {
     return acc + product.product.price * product.quantity;
   }, 0);
@@ -27,13 +29,18 @@ const CartTotals: React.FC = () => {
     return total;
   };
 
+  function oToCheckout() {
+    nav("/checkout");
+  }
+
   return (
     <div className="bag__cart__total">
       <h2>Cart Totals</h2>
 
       <table>
         <tbody>
-          <tr>
+
+            <tr>
             <th>Subtotal : </th>
             <td>${total}</td>
           </tr>
@@ -53,7 +60,10 @@ const CartTotals: React.FC = () => {
         </tbody>
       </table>
 
-      <button className="bag__footer__button__checkout">
+      <button
+        className="bag__footer__button__checkout"
+        onClick={() => oToCheckout()}
+      >
         Proceed to Checkout
       </button>
     </div>

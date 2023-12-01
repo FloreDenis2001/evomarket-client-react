@@ -1000,6 +1000,68 @@ button {
   justify-content: center;
 }
 
+.checkout__billing {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: red;
+  align-items: center;
+}
+.checkout__billing__titleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin-block: 1rem;
+  width: 60%;
+}
+.checkout__billing__titleBox h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  align-items: start;
+  text-transform: uppercase;
+}
+.checkout__billing__fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  width: 60%;
+}
+.checkout__billing__fields__box {
+  display: flex;
+  flex-direction: row;
+  margin-block: 1rem;
+  width: 100%;
+  gap: 1rem;
+}
+.checkout__billing__fields__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.checkout__billing__fields__item__label {
+  margin-bottom: 10px;
+}
+.checkout__billing__fields__item__input {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  color: #141414;
+  font-size: 16px;
+  height: 40px;
+  padding: 0 10px;
+  width: 100%;
+}
+.checkout__billing__fields__shipDifferent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
 .footer {
   display: flex;
   flex-direction: column;

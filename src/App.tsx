@@ -10,6 +10,7 @@ import ProductAddForm from "./components/Product/ProductAddForm";
 import ProductRemoveForm from "./components/Product/ProductRemoveForm";
 import ShoppingBag from "./components/Bag/ShoppingBag";
 import Favourite from "./components/Favourite/Favourite";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   return (
@@ -26,8 +27,9 @@ function App() {
               element={<ProductRemoveForm />}
             />
             <Route path="/shopping-cart" element={<ShoppingBag />} />
-            <Route path="/favourite" element={<Favourite />} />
+            {/* <Route path="/favourite" element={<Favourite />} /> */}
             {/* <Route path="/myaccount" element={<ShoppingBag />} /> */}
+            <Route path="/checkout" element={<Checkout/>} />
           </Routes>
           <Footer />
         </BrowserRouter>
