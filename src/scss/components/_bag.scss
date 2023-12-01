@@ -1,4 +1,11 @@
 .bag {
+  &__main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-block: 10rem;
+  }
   &__list {
     width: 35rem;
     max-width: 40%;
@@ -193,61 +200,119 @@
     }
   }
 
-  &__table {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 50rem;
-    max-width: 50%;
-    background-color: white;
-
-    &__head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+  &__cart {
+    width: 60%;
+    max-width: 70%;
+    table {
       width: 100%;
-      padding: 1rem;
-      border-bottom: 1px solid $color-bg;
-
-      tr {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 1rem;
-      }
+      border-collapse: collapse;
+      border-spacing: 0;
+      color: $color-white;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
 
       th {
-        font-size: 1.5rem;
-        font-weight: 700;
-        text-align: center;
-        color: $color-primary;
+        padding: 1rem;
+        color: white;
+        background-color: $color-primary;
       }
-    }
-
-
-    &__body {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: 1rem;
-      border-bottom: 1px solid $color-bg;
 
       tr {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        padding: 1rem;
+        img {
+          align-self: flex-start;
+          width: 8rem;
+          height: 8rem;
+          object-fit: fill;
+          margin-inline: 2rem;
+        }
       }
 
       td {
-        font-size: 1.5rem;
+        padding: 1rem;
+      }
+    }
+
+    &__total {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-between;
+      max-width: 30%;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      tbody {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 20rem;
+      }
+      h2 {
+        font-size: 2.5rem;
         font-weight: 700;
-        text-align: center;
-        color: $color-primary;
+        color: $color-white;
+        text-transform: uppercase;
+      }
+      tr {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        font-weight: 500;
+      }
+
+      td {
+        color: $color-secondary;
+      }
+      th {
+        color: $color-white;
+      }
+  
+      
+      
+    
+    }
+  }
+
+  &__item {
+    &__remove {
+      background-color: $color-bg;
+      font-size: 1.5rem;
+      padding-inline: 0.7rem;
+      border-radius: 3rem;
+
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+
+    &__info {
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__quantity {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-inline: 1rem;
+      label {
+        margin-inline: 1rem;
       }
     }
   }
+
+  &__shoppingOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
 }
+
+
+
+
