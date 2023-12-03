@@ -52,7 +52,7 @@ p {
 .modal-overlay {
   display: flex;
   align-items: flex-end;
-  justify-content: end;
+  justify-content: flex-end;
   position: fixed;
   top: 0;
   left: 0;
@@ -939,7 +939,7 @@ button {
 .bag__cart__total {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
   max-width: 30%;
   font-size: 2rem;
@@ -1000,6 +1000,12 @@ button {
   justify-content: center;
 }
 
+.checkout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
 .checkout__billing {
   color: #ffffff;
   display: flex;
@@ -1011,7 +1017,7 @@ button {
 .checkout__billing__titleBox {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   margin-block: 1rem;
   width: 60%;
@@ -1019,7 +1025,7 @@ button {
 .checkout__billing__titleBox h2 {
   font-size: 2.4rem;
   font-weight: 700;
-  align-items: start;
+  align-items: flex-start;
   text-transform: uppercase;
 }
 .checkout__billing__fields {
@@ -1060,6 +1066,27 @@ button {
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 2rem;
+}
+.checkout__cart__container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  align-items: center;
+  max-height: 50vh;
+  overflow: scroll;
+}
+.checkout__cart__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.checkout__total {
+  width: 50%;
+  color: #ffffff;
+}
+.checkout__total tbody {
+  width: 100%;
 }
 
 .footer {

@@ -6,8 +6,8 @@ import CardTotalCheckout from './CardTotalCheckout'
 const Checkout : React.FC = () => {
   return (
     <div className='checkout'>
-        <FormCheckout/>
-        <CardTotalCheckout/>
+        {/* <FormCheckout/> */}
+        {/* <CardTotalCheckout/> */}
     </div>
   )
 }

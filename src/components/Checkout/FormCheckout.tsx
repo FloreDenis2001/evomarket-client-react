@@ -143,6 +143,8 @@ const FormCheckout: React.FC = () => {
     </div>
 
     
+
+
   );
 };
 
