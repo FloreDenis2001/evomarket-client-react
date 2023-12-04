@@ -97,7 +97,7 @@ const ListItem: React.FC<ListShoppingProps> = ({ product }) => {
                 {product.quantity} x
               </span>
               <span className="bag__containerItem__info__price">
-                ${product.product.price}
+                  ${product.product.price}
               </span>
             </div>
             <FontAwesomeIcon
