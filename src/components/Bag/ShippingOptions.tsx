@@ -29,7 +29,7 @@ const ShippingOptions: React.FC<ShippingOptionsProps> = ({
 
   return (
     <>
-      <td>
+      <div>
         <fieldset>
           <div className="bag__shoppingOptions">
             <div className="bag__shoppingOptions__item">
@@ -58,7 +58,7 @@ const ShippingOptions: React.FC<ShippingOptionsProps> = ({
             </div>
           </div>
         </fieldset>
-      </td>
+      </div>
     </>
   );
 };

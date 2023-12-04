@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const CartTotals: React.FC = () => {
   const bag = useSelector(selectBag);
   const [selectedShippingOption, setSelectedShippingOption] =
-  useState<string>("Flat rate");
+    useState<string>("Flat rate");
   let nav = useNavigate();
   let total = bag.reduce((acc, product) => {
     return acc + product.product.price * product.quantity;
@@ -36,34 +36,30 @@ const CartTotals: React.FC = () => {
   return (
     <div className="bag__cart__total">
       <h2>Cart Totals</h2>
+      <div className="bag__cart__total__header">
+        <p className="bag__cart__total__header__item">Product</p>
+        <p className="bag__cart__total__header__item">Subtotal</p>
+      </div>
+      <div className="bag__cart__total__details">
+        <div className="bag__cart__total__details__item">
+          <p>Subtotal : </p>
+          <p className=" bag__cart__total__details__item__price">${total}</p>
+        </div>
+        <div className="bag__cart__total__details__item">
+          <p>Shipping : </p>
+          <ShippingOptions
+            selectedOption={selectedShippingOption}
+            handleFlat={() => handleFlatShipping()}
+            onShippingOptionChange={handleShippingOptionChange}
+          />
+        </div>
 
-      <table>
-        <tbody>
-
-            <tr>
-            <th>Subtotal : </th>
-            <td>${total}</td>
-          </tr>
-          <tr>
-            <th>Shipping : </th>
-            <ShippingOptions
-              selectedOption={selectedShippingOption}
-              handleFlat={() => handleFlatShipping()}
-              onShippingOptionChange={handleShippingOptionChange}
-            />
-          </tr>
-
-          <tr>
-            <th>Total : </th>
-            <td>${calculateFinalTotal()}</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <button
-        className="bag__footer__button__checkout"
-        onClick={() => oToCheckout()}
-      >
+        <div className="bag__cart__total__details__item">
+          <p>Total : </p>
+          <p className=" bag__cart__total__details__item__price">${calculateFinalTotal()}</p>
+        </div>
+      </div>
+      <button className="button__first" onClick={() => oToCheckout()}>
         Proceed to Checkout
       </button>
     </div>
