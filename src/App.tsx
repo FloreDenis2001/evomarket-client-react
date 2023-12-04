@@ -11,9 +11,11 @@ import ProductRemoveForm from "./components/Product/ProductRemoveForm";
 import ShoppingBag from "./components/Bag/ShoppingBag";
 import Favourite from "./components/Favourite/Favourite";
 import Checkout from "./components/Checkout/Checkout";
+import { NavigationLeftBarProvider } from "./components/Navigation/NavigationLeftBarProvider";
 
 function App() {
   return (
+    <NavigationLeftBarProvider>
     <Provider store={store}>
       <div className="App">
         <BrowserRouter>
@@ -35,6 +37,7 @@ function App() {
         </BrowserRouter>
       </div>
     </Provider>
+    </NavigationLeftBarProvider>
   );
 }
 

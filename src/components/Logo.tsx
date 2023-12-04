@@ -10,8 +10,7 @@ const Logo = () => {
 
   return (
     <div onClick={goHome} className="logo">
-
-        <img src="https://svgshare.com/i/yod.svg" alt="" />
+        <img src="https://svgshare.com/i/10Q1.svg" alt="" />
     </div>
   );
 };

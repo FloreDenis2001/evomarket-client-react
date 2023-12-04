@@ -1,25 +1,23 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ShoppingList from "../Bag/ShoppingList";
+import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 
 interface NavigationItemCardProps {
-  title: string;
-  icon?: any;
+  icon: string | any;
   path: string;
 }
 
 const NavigationItemCard: React.FC<NavigationItemCardProps> = ({
-  title,
   icon,
   path,
 }) => {
   const nav = useNavigate();
 
-
   const [isModalOpen, setModalOpen] = useState(false);
 
-  function openModal(){
+  function openModal() {
     setModalOpen(true);
   }
 
@@ -35,20 +33,23 @@ const NavigationItemCard: React.FC<NavigationItemCardProps> = ({
     }
   }
 
+  const isWhiteIcon = icon === faBagShopping;
+
   return (
     <>
-    {isModalOpen && <ShoppingList onClose={closeModal} />}
+      {isModalOpen && <ShoppingList onClose={closeModal} />}
 
-    <li onClick={() => handleItemClick()}>
-      <p className="navigation__desktop__link">
-        <FontAwesomeIcon
-          className="navigation__desktop__link__icon"
-          icon={icon}
-        />
-        <span>{title}</span>
-      </p>
-    </li>
-  </>
+      <li onClick={() => handleItemClick()}>
+        <p className="navigation__desktop__link">
+          <FontAwesomeIcon
+            className={`navigation__desktop__link__icon ${
+              isWhiteIcon ? "shop-icon" : ""
+            }`}
+            icon={icon}
+          />
+        </p>
+      </li>
+    </>
   );
 };
 
