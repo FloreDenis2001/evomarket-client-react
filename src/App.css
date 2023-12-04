@@ -836,8 +836,8 @@ button {
 .bag__main {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-around;
+  gap: 5rem;
   padding-block: 10rem;
 }
 .bag__list {
@@ -1054,15 +1054,20 @@ button {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  max-width: 30%;
+  width: 25%;
+  max-width: 40%;
   font-size: 2rem;
   margin-bottom: 1rem;
+  border: 1px solid #369970;
+  border-radius: 5rem;
+  padding: 3rem;
 }
 .bag__cart__total tbody {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 20rem;
+  padding-block: 2rem;
 }
 .bag__cart__total h2 {
   font-size: 2.5rem;
@@ -1116,6 +1121,16 @@ button {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+}
+.bag__shoppingOptions label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3F4E4F;
+}
+.bag__shoppingOptions span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #369970;
 }
 
 .checkout {
