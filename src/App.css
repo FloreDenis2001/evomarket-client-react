@@ -1270,6 +1270,18 @@ button {
   width: 100%;
 }
 
+.main__login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .footer {
   display: flex;
   flex-direction: column;

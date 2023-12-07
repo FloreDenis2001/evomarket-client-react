@@ -12,32 +12,39 @@ import ShoppingBag from "./components/Bag/ShoppingBag";
 import Favourite from "./components/Favourite/Favourite";
 import Checkout from "./components/Checkout/Checkout";
 import { NavigationLeftBarProvider } from "./components/Navigation/NavigationLeftBarProvider";
+import Login from "./components/User/Login";
+import LoginProvider from "./context/LoginProvider";
+import Register from "./components/User/Register";
 
 function App() {
   return (
-    <NavigationLeftBarProvider>
     <Provider store={store}>
-      <div className="App">
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/product/:productSKU" element={<ProductPage />} />
-            <Route path="/product/add" element={<ProductAddForm />} />
-            <Route
-              path="/product/edit/:productSKU"
-              element={<ProductRemoveForm />}
-            />
-            <Route path="/shopping-cart" element={<ShoppingBag />} />
-            {/* <Route path="/favourite" element={<Favourite />} /> */}
-            {/* <Route path="/myaccount" element={<ShoppingBag />} /> */}
-            <Route path="/checkout" element={<Checkout/>} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </div>
+      <NavigationLeftBarProvider>
+        <LoginProvider>
+          <div className="App">
+            <BrowserRouter>
+              <Header />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/product/:productSKU" element={<ProductPage />} />
+                <Route path="/product/add" element={<ProductAddForm />} />
+                <Route
+                  path="/product/edit/:productSKU"
+                  element={<ProductRemoveForm />}
+                />
+                <Route path="/shopping-cart" element={<ShoppingBag />} />
+                {/* <Route path="/favourite" element={<Favourite />} /> */}
+                {/* <Route path="/myaccount" element={<ShoppingBag />} /> */}
+                <Route path="/checkout" element={<Checkout />} />
+              </Routes>
+              <Footer />
+            </BrowserRouter>
+          </div>
+        </LoginProvider>
+      </NavigationLeftBarProvider>
     </Provider>
-    </NavigationLeftBarProvider>
   );
 }
 
