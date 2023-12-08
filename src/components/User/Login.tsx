@@ -25,7 +25,8 @@ const Login: React.FC = () => {
     try {
       let user = await userService.login(data);
       setUserCookie(user);
-      console.log(user);
+      handleNavHome();
+     
     } catch (error) {
       console.log(error);
     }
