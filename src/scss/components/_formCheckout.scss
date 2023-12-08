@@ -1,0 +1,309 @@
+.checkout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-inline: 8%;
+
+  &__quantity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    label {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      color: $color-black;
+    }
+
+    &__button {
+      width: 2rem;
+      height: 2rem;
+      background-color: $color-white;
+      color: $color-black;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      border-radius: 5rem;
+      text-align: center;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $color-white;
+        background: $linear-gradient-2;
+      }
+    }
+  }
+
+  &__containerItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-block: 2rem;
+    border-radius: 1rem;
+    width: 100%;
+    height: 10rem;
+    position: relative;
+    box-shadow: 0 0 7px $color-bg;
+
+    &__image {
+      display: flex;
+      align-items: center;
+      width: 40%;
+      height: 100%;
+      padding-inline: 1rem;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    &__info {
+      margin-block: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      padding-inline: 2rem;
+      width: 100%;
+      height: 100%;
+
+      &__title {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      &__price {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: $color-primary;
+      }
+      &__quantity {
+        font-size: 1.5rem;
+        color: $color-black;
+      }
+
+      &__remove {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: $color-black;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: absolute;
+        right: 0.7rem;
+        top: 0.5rem;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+
+      &__qp {
+        margin: 0.2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+  }
+
+  input[type="text"] {
+    height: 4rem;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    font-family: $font-family-secondary;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $color-primary;
+    }
+  }
+
+  textarea {
+    height: 10rem;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    font-family: $font-family-secondary;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $color-primary;
+    }
+  }
+  label {
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-family: $font-family-secondary;
+    color: $color-black;
+  }
+
+  label[for="ship-different-address"] {
+    padding: 0px;
+  }
+
+  &__billing {
+    color: $color-black;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    &__titleBox {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      margin-block: 1rem;
+      width: 60%;
+
+      h2 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        align-items: flex-start;
+        text-transform: uppercase;
+      }
+    }
+
+    &__fields {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      width: 100%;
+
+      &__box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-block: 1rem;
+        gap: 1rem;
+      }
+
+      &__item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        width: 100%;
+
+        &__label {
+          margin-bottom: 10px;
+        }
+
+        &__input {
+          background-color: $color-white;
+          border: 1px solid $color-white;
+          border-radius: 5px;
+          color: $color-black;
+          font-size: 16px;
+          height: 40px;
+          padding: 0 10px;
+          width: 100%;
+        }
+      }
+
+      &__shipDifferent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__cart {
+    &__total {
+      width: 40rem;
+
+  
+
+      &__container {
+        &__header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem;
+          font-size: 1.8rem;
+        
+          font-weight: 700;
+        }
+
+        &__products {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          max-height: 65vh;
+          overflow: scroll;
+          padding: 0.5rem;
+          font-size: 1.8rem;
+          
+          font-weight: 700;
+        }
+
+        &__details {
+          &__item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      &__image {
+        display: grid;
+        place-items: center;
+        width: 15rem;
+        height: 15rem;
+        background-color: $color-primary;
+        margin-right: 1rem;
+      }
+
+      &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+  }
+
+  &__total {
+    width: 50%;
+    color: $color-white;
+
+    tbody {
+      width: 100%;
+    }
+  }
+}

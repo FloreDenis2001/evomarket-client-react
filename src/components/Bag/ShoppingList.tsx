@@ -44,8 +44,8 @@ const ShoppingList: React.FC<ListProps> = ({onClose}) => {
                 <p className="bag__footer__total__price">$ {total}</p>
               </div>
               <div className="bag__footer__button">
-                <button className="bag__footer__button__viewCart" onClick={handleGoToViewCart}>View Cart</button>
-                <button className="bag__footer__button__checkout">Checkout</button>
+                <button className="button__textFirst" onClick={handleGoToViewCart}>View Cart</button>
+                <button className="button__second">Checkout</button>
               </div>
             </div>
           </div>

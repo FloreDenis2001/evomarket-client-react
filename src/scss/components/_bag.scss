@@ -1,10 +1,18 @@
 .bag {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 80vh;
+    overflow: scroll;
+  }
   &__main {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     gap: 5rem;
-    padding-block: 10rem;
+    padding-block: 2rem;
   }
   &__list {
     width: 35rem;
@@ -98,7 +106,7 @@
     align-items: center;
     margin-block: 2rem;
     border-radius: 1rem;
-    width: 100%;
+    width: 90%;
     height: 10rem;
     position: relative;
     box-shadow: 0 0 7px $color-bg;
@@ -211,7 +219,8 @@
 
   &__cart {
     width: 60%;
-    max-width: 70%;
+    max-width: 86rem;
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -223,6 +232,11 @@
       text-transform: uppercase;
       thead {
         background: $linear-gradient-2;
+      }
+
+      tbody {
+        max-height: 30vh;
+        overflow: scroll;
       }
 
       th {
@@ -250,39 +264,48 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
-      width: 25%;
-      max-width: 40%;
+      width: 30%;
+      max-width: 42rem;
+      max-height: 40rem;
       font-size: 2rem;
       margin-bottom: 1rem;
-      border: 1px solid $color-primary;
-      border-radius: 5rem;
       padding: 3rem;
-      tbody {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 20rem;
-        padding-block: 2rem;
-        width: 100%;
-      }
+
       h2 {
         font-size: 2.5rem;
         font-weight: 700;
-        color: $color-black;
         text-transform: uppercase;
-      }
-      tr {
-        display: flex;
-        align-content: center;
-        justify-content: space-between;
-        font-weight: 500;
+        padding-bottom: 2rem;
       }
 
-      td {
-        color: $color-primary;
+      &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 1.8rem;
+        font-weight: 700;
       }
-      th {
-        color: $color-black;
+
+      &__details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        &__item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          font-size: 1.8rem;
+          font-weight: 700;
+
+          &__price{
+            font-weight: 500;
+            font-size: 2rem;
+          }
+        }
       }
     }
   }

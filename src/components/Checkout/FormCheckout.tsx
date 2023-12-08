@@ -15,53 +15,51 @@ const FormCheckout: React.FC = () => {
       <div className="checkout__billing__fields">
         <div className="checkout__billing__fields__box">
           <div className="checkout__billing__fields__item">
-            <label htmlFor="first-name">First Name</label>
+            <label htmlFor="first-name">First Name <abbr className="required">*</abbr> </label>
+            
             <input type="text" id="first-name" placeholder="First Name" />
           </div>
 
           <div className="checkout__billing__fields__item">
-            <label htmlFor="last-name">Last Name</label>
+            <label htmlFor="last-name">Last Name <abbr className="required">*</abbr> </label>
             <input type="text" id="last-name" placeholder="Last Name" />
           </div>
         </div>
 
         <div className="checkout__billing__fields__item">
-          <label htmlFor="company">Company Name</label>
+          <label htmlFor="company">Company Name <abbr className="required">*</abbr> </label>
           <input type="text" id="company" placeholder="Company" />
         </div>
 
         <div className="checkout__billing__fields__item">
-          <label htmlFor="country">Country</label>
+          <label htmlFor="country">Country <abbr className="required">*</abbr> </label>
           <input type="text" id="country" placeholder="Country" />
         </div>
 
         <div className="checkout__billing__fields__item">
-          <label htmlFor="street-address">Street Address</label>
+          <label htmlFor="street-address">Street Address <abbr className="required">*</abbr> </label>
           <input type="text" id="street-address" placeholder="Street Address" />
         </div>
 
         <div className="checkout__billing__fields__item">
-          <label htmlFor="town-city">Town / City</label>
+          <label htmlFor="town-city">Town / City <abbr className="required">*</abbr> </label>
           <input type="text" id="town-city" placeholder="City" />
         </div>
 
-        <div className="checkout__billing__fields__item">
-          <label htmlFor="state">State / County</label>
-          <input type="text" id="state" placeholder="City" />
-        </div>
+     
 
         <div className="checkout__billing__fields__item">
-          <label htmlFor="postcode">Postcode / ZIP</label>
+          <label htmlFor="postcode">Postcode / ZIP <abbr className="required">*</abbr> </label>
           <input type="text" id="postcode" placeholder="Postcode" />
         </div>
 
         <div className="checkout__billing__fields__item">
-          <label htmlFor="phone">Phone</label>
+          <label htmlFor="phone">Phone <abbr className="required">*</abbr> </label>
           <input type="text" id="phone" placeholder="Phone" />
         </div>
 
         <div className="checkout__billing__fields__item">
-          <label htmlFor="email">Email Address</label>
+          <label htmlFor="email">Email Address <abbr className="required">*</abbr> </label>
           <input type="text" id="email" placeholder="Email" />
 
           <div className="checkout__billing__fields__box">
@@ -78,27 +76,27 @@ const FormCheckout: React.FC = () => {
           {checkboxShip && (
             <div className="checkout__billing__fields__shipDifferent">
               <div className="checkout__billing__fields__item">
-                <label htmlFor="first-name">First Name</label>
+                <label htmlFor="first-name">First Name <abbr className="required">*</abbr> </label>
                 <input type="text" id="first-name" placeholder="First Name" />
               </div>
 
               <div className="checkout__billing__fields__item">
-                <label htmlFor="last-name">Last Name</label>
+                <label htmlFor="last-name">Last Name <abbr className="required">*</abbr> </label>
                 <input type="text" id="last-name" placeholder="Last Name" />
               </div>
 
               <div className="checkout__billing__fields__item">
-                <label htmlFor="company">Company Name</label>
+                <label htmlFor="company">Company Name <abbr className="required">*</abbr> </label>
                 <input type="text" id="company" placeholder="Company Name" />
               </div>
 
               <div className="checkout__billing__fields__item">
-                <label htmlFor="country">Country</label>
+                <label htmlFor="country">Country <abbr className="required">*</abbr> </label>
                 <input type="text" id="country" placeholder="Country" />
               </div>
 
               <div className="checkout__billing__fields__item">
-                <label htmlFor="street-address">Street Address</label>
+                <label htmlFor="street-address">Street Address <abbr className="required">*</abbr> </label>
                 <input
                   type="text"
                   id="street-address"
@@ -107,22 +105,19 @@ const FormCheckout: React.FC = () => {
               </div>
 
               <div className="checkout__billing__fields__item">
-                <label htmlFor="town-city">Town / City</label>
+                <label htmlFor="town-city">Town / City <abbr className="required">*</abbr> </label>
                 <input type="text" id="town-city" placeholder="City" />
               </div>
 
-              <div className="checkout__billing__fields__item">
-                <label htmlFor="state">State / County</label>
-                <input type="text" id="state" placeholder="Country" />
-              </div>
+          
 
               <div className="checkout__billing__fields__item">
-                <label htmlFor="postcode">Postcode / ZIP</label>
+                <label htmlFor="postcode">Postcode / ZIP <abbr className="required">*</abbr> </label>
                 <input type="text" id="postcode" placeholder="Postcode" />
               </div>
 
               <div className="checkout__billing__fields__item">
-                <label htmlFor="email">Email Address</label>
+                <label htmlFor="email">Email Address <abbr className="required">*</abbr> </label>
                 <input type="text" id="email" placeholder="Email" />
               </div>
             </div>

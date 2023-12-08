@@ -28,42 +28,42 @@ const CardTotalCheckout = () => {
   };
 
   return (
-    <div className="checkout_cart__total">
-      <table>
-        <thead>
-          <tr>
-            <th className="checkout__cart__hname">Product</th>
-            <th className="checkout__cart__htotal">Subtotal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="checkout__cart__container">
-            {bag.map((product) => (
-              <CheckoutCardItem key={product.product.sku} productBag={product} />
-            ))}
-          </tr>
-        </tbody>
+    <div className="checkout__cart__total">
+      <div className="checkout__cart__total__container">
+        <div className="checkout__cart__total__container__header">
+          <p className="checkout__cart__total__container__header__item">
+            Product
+          </p>
+          <p className="checkout__cart__total__container__header__item">
+            Subtotal
+          </p>
+        </div>
 
-        <tfoot>
-          <tr>
-            <th>Subtotal </th>
-            <td>${total}</td>
-          </tr>
-          <tr>
-            <th>Shipping </th>
+        <div className="checkout__cart__total__container__products">
+          {bag.map((product) => (
+            <CheckoutCardItem key={product.product.sku} product={product} />
+          ))}
+        </div>
+
+        <div className="checkout__cart__total__container__details">
+          <div className="checkout__cart__total__container__details__item">
+            <p>Subtotal : </p>
+            <p>${total}</p>
+          </div>
+          <div className="checkout__cart__total__container__details__item">
+            <p>Shipping : </p>
             <ShippingOptions
               selectedOption={selectedShippingOption}
               handleFlat={() => handleFlatShipping()}
               onShippingOptionChange={handleShippingOptionChange}
             />
-          </tr>
-
-          <tr>
-            <th>Total </th>
-            <td>${calculateFinalTotal()}</td>
-          </tr>
-        </tfoot>
-      </table>
+          </div>
+          <div className="checkout__cart__total__container__details__item">
+            <p>Total : </p>
+            <p>${calculateFinalTotal()}</p>
+          </div>
+        </div>
+      </div>
 
       <button className="checkout__footer__button__checkout">
         PLACE ORDER
