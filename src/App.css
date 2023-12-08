@@ -1068,7 +1068,6 @@ button {
   justify-content: space-around;
   height: 20rem;
   padding-block: 2rem;
-  width: 100%;
 }
 .bag__cart__total h2 {
   font-size: 2.5rem;
@@ -1221,18 +1220,6 @@ button {
 }
 .checkout__total tbody {
   width: 100%;
-}
-
-.main__login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.register__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .footer {
