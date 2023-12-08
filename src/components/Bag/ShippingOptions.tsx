@@ -1,4 +1,5 @@
 // ShippingOptions.tsx
+import Radio from "@mui/material/Radio";
 import React from "react";
 
 interface ShippingOptionsProps {
@@ -12,6 +13,20 @@ const ShippingOptions: React.FC<ShippingOptionsProps> = ({
   handleFlat,
   onShippingOptionChange,
 }) => {
+  const [selectedValue, setSelectedValue] = React.useState("c");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedValue(event.target.value);
+  };
+
+  const controlProps = (item: string) => ({
+    checked: selectedValue === item,
+    onChange: handleChange,
+    value: item,
+    name: "color-radio-button-demo",
+    inputProps: { "aria-label": item },
+  });
+
   return (
     <>
       <td>
@@ -20,11 +35,9 @@ const ShippingOptions: React.FC<ShippingOptionsProps> = ({
             <div className="bag__shoppingOptions__item">
               <label>Flat rate : </label>
               <span> $10.00 </span>
-              <input
-                type="radio"
-                id="flat-rate"
-                name="shipping-option"
-                value="Flat rate"
+              <Radio
+                {...controlProps("c")}
+                color="success"
                 checked={selectedOption === "Flat rate"}
                 onChange={() => {
                   onShippingOptionChange("Flat rate");
@@ -36,11 +49,9 @@ const ShippingOptions: React.FC<ShippingOptionsProps> = ({
             <div className="bag__shoppingOptions__item">
               <label>Free shipping : </label>
               <span> $0.00 </span>
-              <input
-                type="radio"
-                id="free-shipping"
-                name="shipping-option"
-                value="Free shipping"
+              <Radio
+                {...controlProps("c")}
+                color="success"
                 checked={selectedOption === "Free shipping"}
                 onChange={() => onShippingOptionChange("Free shipping")}
               />

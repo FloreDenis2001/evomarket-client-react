@@ -1,41 +1,40 @@
 .carousel {
- &__category{
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  flex-direction: column;
-  padding-block: 5rem;
-  position: relative;
- }
+  &__category {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-block: 5rem;
+    position: relative;
+  }
 
- &-container{
-   max-width: 80%;
-   align-self: center;
- }
+  &-container {
+    max-width: 80%;
+    align-self: center;
+  }
 
-  &__cards{
+  &__cards {
     margin-top: 2rem;
     max-width: 80%;
   }
 
-  &__title{
+  &__title {
     position: absolute;
     top: 2%;
     left: 10%;
     font-size: 3rem;
     padding-inline: 1.5rem;
 
-    color:$color-white
+    color: $color-black;
+    font-weight: bold;
   }
 }
 
-.image-container img{
-  object-fit:contain;
+.image-container img {
+  object-fit: contain;
 }
 
-
-.slick-track{
+.slick-track {
   padding-block: 2rem;
-  background-color: $color-black;
 }

@@ -56,7 +56,7 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 500;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
@@ -155,235 +155,159 @@ button {
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: relative;
-  border-radius: 0.5rem;
-  background-color: #3F4E4F;
-  box-shadow: rgba(54, 153, 112, 0.3) 0px 1px 2px 0px, rgba(54, 153, 112, 0.15) 0px 1px 3px 1px;
-  min-width: 20rem;
-  max-width: 20rem;
-  min-height: 25rem;
+  border-radius: 2rem;
 }
-@media only screen and (max-width: 75em) {
-  .card {
-    min-width: 20rem;
-    max-width: 20rem;
-    min-height: 30rem;
-    max-height: 32rem;
-  }
-}
-@media only screen and (max-width: 56.25em) {
-  .card {
-    min-width: 15rem;
-    max-width: 15rem;
-    min-height: 22rem;
-    max-height: 24rem;
-  }
-}
-@media only screen and (max-width: 37.5em) {
-  .card {
-    min-width: 15rem;
-    max-width: 15rem;
-    min-height: 22rem;
-    max-height: 24rem;
-  }
-}
-.card__details {
-  margin-left: 0.5rem;
-  transform: translateY(-0.5rem);
-}
-.card__img {
-  align-self: center;
-  min-width: 80%;
-  max-height: 15rem;
-  border-radius: 0.5rem;
-  object-fit: fill;
-  padding: 1rem;
-}
-.card__img:hover {
-  transform: scale(1.1);
-  transition: all 0.5s ease-in-out;
+.card__container__image {
+  width: 25rem;
+  height: 20rem;
+  max-height: 25rem;
+  display: grid;
+  place-items: center;
   overflow: hidden;
-  object-fit: fill;
 }
-@media only screen and (max-width: 75em) {
-  .card__img {
-    height: 15rem;
-  }
+.card__container__title {
+  width: 25rem;
+  height: 5rem;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 }
-@media only screen and (max-width: 56.25em) {
-  .card__img {
-    height: 10rem;
-  }
+.card__container__details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  gap: 0.5rem;
 }
-@media only screen and (max-width: 37.5em) {
-  .card__img {
-    height: 10rem;
-  }
-}
-.card__title {
-  align-self: center;
-  margin-left: 0.5rem;
-  padding-block: 0.4rem;
-  color: #ffffff;
-  font-size: 1.9rem;
-  font-weight: 500;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-  padding-top: 0.2rem;
-  text-align: center;
-}
-@media only screen and (max-width: 75em) {
-  .card__title {
-    font-size: 1.6rem;
-  }
-}
-@media only screen and (max-width: 56.25em) {
-  .card__title {
-    font-size: 1.3rem;
-  }
-}
-@media only screen and (max-width: 37.5em) {
-  .card__title {
-    font-size: 1.3rem;
-    font-weight: 700;
-  }
-}
-.card__stock, .card__outstock {
+.card__container__price {
   display: flex;
   align-items: center;
-  margin-left: 0.5rem;
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: green;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 1rem;
 }
-@media only screen and (max-width: 75em) {
-  .card__stock, .card__outstock {
-    font-size: 1.6rem;
-  }
+.card__container__buyBox {
+  width: 80%;
+  align-self: center;
+  background: linear-gradient(150deg, #67d1bd 0%, #369970 54%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  gap: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 5rem;
+  margin-bottom: 1rem;
 }
-@media only screen and (max-width: 56.25em) {
-  .card__stock, .card__outstock {
-    font-size: 1.3rem;
-  }
+.card__container__buyBox:hover {
+  background: linear-gradient(90deg, #369970 0%, #67d1bd 54%);
 }
-@media only screen and (max-width: 37.5em) {
-  .card__stock, .card__outstock {
-    font-size: 1.3rem;
-    font-weight: 700;
-  }
+.card__container__buyBox__text {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card__container__buyBox__icon {
+  color: #ffffff;
+  width: 2rem;
+  height: 2rem;
+}
+.card__img {
+  width: 60%;
+  height: 60%;
+  object-fit: fill;
+  transition: all 0.3s ease-in-out;
+}
+.card__img:hover {
+  transform: scale(1.2);
+}
+.card__title {
+  padding-left: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3F4E4F;
+  text-align: flex-start;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card__stock {
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1fd455;
+  text-align: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  gap: 1rem;
+}
+.card__stock p {
+  color: #3F4E4F;
+}
+.card__stock__icon {
+  width: 2rem;
+  height: 2rem;
 }
 .card__outstock {
-  color: #369970;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #df4141;
+  text-align: flex-start;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  gap: 1rem;
 }
-.card__stock p, .card__outstock p {
-  margin-left: 0.3rem;
+.card__outstock p {
+  color: #3F4E4F;
 }
 .card__stars {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
-  font-size: 1.6rem;
+  padding-left: 0.5rem;
 }
 .card__stars span {
-  color: goldenrod;
-}
-@media only screen and (max-width: 75em) {
-  .card__stars {
-    font-size: 1.6rem;
-  }
-}
-@media only screen and (max-width: 56.25em) {
-  .card__stars {
-    font-size: 1.3rem;
-  }
-}
-@media only screen and (max-width: 37.5em) {
-  .card__stars {
-    font-size: 1.3rem;
-    font-weight: 700;
-  }
-}
-.card__price {
-  display: flex;
-  align-items: center;
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
-  font-weight: bolder;
-  font-size: 3rem;
-  grid-row: 5/-1;
-  grid-column: 1/2;
-  color: #369970;
-}
-@media only screen and (max-width: 75em) {
-  .card__price {
-    font-size: 2.8rem;
-  }
-}
-@media only screen and (max-width: 56.25em) {
-  .card__price {
-    font-size: 2.5rem;
-  }
-}
-@media only screen and (max-width: 37.5em) {
-  .card__price {
-    font-size: 2.2rem;
-    font-weight: 700;
-  }
-}
-.card__button--buy {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  background: linear-gradient(180deg, #67d1bd 0%, #369970 54%);
-  color: white;
-  font-weight: 800;
-  font-size: 2rem;
-  width: 4.5rem;
-  height: 3.5rem;
-  border: none;
-  border-radius: 5px 0px 5px 0px;
-}
-@media only screen and (max-width: 75em) {
-  .card__button--buy {
-    font-size: 2rem;
-    width: 4.5rem;
-    height: 3.5rem;
-  }
-}
-@media only screen and (max-width: 56.25em) {
-  .card__button--buy {
-    font-size: 1.5rem;
-    width: 3.5rem;
-    height: 2.5rem;
-  }
-}
-.card .card_shopping {
-  font-size: 2rem;
-}
-@media only screen and (max-width: 56.25em) {
-  .card .card_shopping {
-    font-size: 1.5rem;
-  }
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 .card__fav {
-  cursor: pointer;
   position: absolute;
-  right: 0.2rem;
-  top: 0.3rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(150deg, #67d1bd 0%, #369970 54%);
   color: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  padding: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
-@media only screen and (max-width: 56.25em) {
-  .card__fav {
-    font-size: 2rem !important;
-  }
+.card__fav:hover {
+  transform: scale(1.1);
+  color: #df4141;
 }
-.card__fav:hover, .card__fav:active {
+.card__price {
+  padding-left: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
   color: #369970;
+  text-align: flex-start;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .navigation__desktop {
@@ -574,7 +498,7 @@ button {
   align-items: flex-start;
   gap: 1.5rem;
   padding: 1rem;
-  z-index: 1000;
+  z-index: 50;
   transition: all 1s;
   cursor: pointer;
 }
@@ -656,7 +580,8 @@ button {
   left: 10%;
   font-size: 3rem;
   padding-inline: 1.5rem;
-  color: #ffffff;
+  color: #3F4E4F;
+  font-weight: bold;
 }
 
 .image-container img {
@@ -665,7 +590,6 @@ button {
 
 .slick-track {
   padding-block: 2rem;
-  background-color: #3F4E4F;
 }
 
 .search-box {
@@ -912,21 +836,21 @@ button {
 .bag__main {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-around;
+  gap: 5rem;
   padding-block: 10rem;
 }
 .bag__list {
   width: 35rem;
   max-width: 40%;
-  height: 100%;
-  background-color: #3F4E4F;
+  height: 100vh;
+  background-color: #ffffff;
   padding: 20px;
   box-shadow: 0 0 10px #369970;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  color: #ffffff;
+  color: #3F4E4F;
+  gap: 5rem;
 }
 .bag__list__nav {
   display: flex;
@@ -980,15 +904,17 @@ button {
   transition: all 0.3s;
   text-align: center;
   text-transform: uppercase;
+  border-radius: 5rem;
 }
 .bag__footer__button__checkout:hover {
-  background-color: #369970;
+  background: linear-gradient(150deg, #67d1bd 0%, #369970 54%);
   color: #ffffff;
 }
 .bag__footer__button__viewCart {
   font-size: 1.7rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
+  color: #3F4E4F;
 }
 .bag__containerItem {
   display: flex;
@@ -1039,12 +965,12 @@ button {
 }
 .bag__containerItem__info__quantity {
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #3F4E4F;
 }
 .bag__containerItem__info__remove {
   font-size: 1.7rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #3F4E4F;
   cursor: pointer;
   transition: all 0.3s;
   position: absolute;
@@ -1055,7 +981,10 @@ button {
   color: #369970;
 }
 .bag__containerItem__info__qp {
-  margin-block: 0.2rem;
+  margin: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 .bag__quantity {
   display: flex;
@@ -1069,13 +998,13 @@ button {
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
-  color: #ffffff;
+  color: #3F4E4F;
 }
 .bag__quantity__button {
   width: 2rem;
   height: 2rem;
-  background-color: rgb(60, 61, 66);
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #3F4E4F;
   font-size: 1.2rem;
   font-weight: 700;
   border: none;
@@ -1086,7 +1015,8 @@ button {
   text-transform: uppercase;
 }
 .bag__quantity__button:hover {
-  background-color: #369970;
+  color: #ffffff;
+  background: linear-gradient(150deg, #67d1bd 0%, #369970 54%);
 }
 .bag__cart {
   width: 60%;
@@ -1096,16 +1026,18 @@ button {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  color: #ffffff;
+  color: #3F4E4F;
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
 }
+.bag__cart table thead {
+  background: linear-gradient(150deg, #67d1bd 0%, #369970 54%);
+}
 .bag__cart table th {
   padding: 1rem;
-  color: white;
-  background-color: #369970;
+  color: #ffffff;
 }
 .bag__cart table tr img {
   align-self: flex-start;
@@ -1122,20 +1054,25 @@ button {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  max-width: 30%;
+  width: 25%;
+  max-width: 40%;
   font-size: 2rem;
   margin-bottom: 1rem;
+  border: 1px solid #369970;
+  border-radius: 5rem;
+  padding: 3rem;
 }
 .bag__cart__total tbody {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 20rem;
+  padding-block: 2rem;
 }
 .bag__cart__total h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #3F4E4F;
   text-transform: uppercase;
 }
 .bag__cart__total tr {
@@ -1145,10 +1082,10 @@ button {
   font-weight: 500;
 }
 .bag__cart__total td {
-  color: #67d1bd;
+  color: #369970;
 }
 .bag__cart__total th {
-  color: #ffffff;
+  color: #3F4E4F;
 }
 .bag__item__remove {
   background-color: rgb(60, 61, 66);
@@ -1157,18 +1094,23 @@ button {
   border-radius: 3rem;
 }
 .bag__item__remove:hover {
-  background-color: #369970;
+  background: #df4141;
 }
 .bag__item__info {
   max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #3F4E4F;
+}
+.bag__item__info__price {
+  color: #3F4E4F;
 }
 .bag__item__quantity {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #3F4E4F;
   margin-inline: 1rem;
 }
 .bag__item__quantity label {
@@ -1179,6 +1121,16 @@ button {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+}
+.bag__shoppingOptions label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3F4E4F;
+}
+.bag__shoppingOptions span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #369970;
 }
 
 .checkout {
@@ -1566,7 +1518,6 @@ main {
 }
 
 .advertisement {
-  background-color: #3F4E4F;
   padding: 5rem;
   text-align: center;
   min-height: 40rem;
