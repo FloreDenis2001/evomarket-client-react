@@ -84,6 +84,54 @@ p {
   color: #df4141;
 }
 
+.navigation__desktop__list__bagWhite {
+  position: relative;
+  display: inline-block;
+}
+
+.user-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 20rem;
+  padding-top: 1rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%;
+  left: -200%;
+  transform: translateX(-50%);
+  border-radius: 1rem;
+}
+
+.user-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.user-dropdown .dropdown-content a {
+  color: #3F4E4F;
+  background-color: #f9f9f9;
+  font-size: 1.6rem;
+  padding: 1.2rem 1.6rem;
+  text-decoration: none;
+  display: block;
+}
+
+.user-dropdown .dropdown-content p {
+  color: #ffffff;
+  background: linear-gradient(150deg, #67d1bd 0%, #369970 54%);
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1.2rem 1.6rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.user-dropdown .dropdown-content a:hover {
+  background: white;
+  color: #3F4E4F;
+}
+
 .product__carouselImages {
   display: flex;
   align-items: center;
@@ -206,6 +254,22 @@ button {
   color: #3F4E4F;
   transition: all 0.3s;
   cursor: pointer;
+}
+.button__signUp {
+  background: #ffffff;
+  font-size: 2rem;
+  color: #369970;
+  font-weight: 500;
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  margin-right: 2rem;
+  cursor: pointer;
+  width: 40%;
+  transition: all 0.3s;
+}
+.button__signUp:hover {
+  transform: scale(1.02);
 }
 
 .card {
@@ -1210,6 +1274,122 @@ button {
   color: #369970;
 }
 
+.login {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.login__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 60%;
+  padding-block: 2rem;
+}
+.login__container__title {
+  font-size: 2.5rem;
+  color: #369970;
+}
+.login__container__left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 2rem;
+  background: #ffffff;
+  border-radius: 1rem 0 0 1rem;
+  border: 1px solid #369970;
+  padding: 5rem;
+}
+.login__container__left button {
+  align-self: center;
+  width: 50%;
+}
+.login__container__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.login__container__form__input {
+  height: 4rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  font-family: "Red Hat Display", sans-serif;
+  border-bottom: 1px solid #67d1bd;
+}
+.login__container__form__input:focus {
+  border-radius: 1rem;
+  outline: none;
+  border: 1px solid #369970;
+}
+.login__container__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  gap: 1rem;
+  background: linear-gradient(150deg, #67d1bd 0%, #369970 54%);
+  color: #ffffff;
+  border-radius: 0 1rem 1rem 0;
+}
+.login__container__right__title {
+  font-size: 4rem;
+}
+.login__container__right__text {
+  font-size: 1.6rem;
+  width: 80%;
+  text-align: center;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.register__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  padding: 2rem;
+}
+.register__container__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 60%;
+}
+.register__container__form__box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+.register__container__form__box label {
+  font-size: 2rem;
+  color: #369970;
+  margin-bottom: 0.5rem;
+}
+.register__container__form__box input {
+  height: 4rem;
+  padding: 0.5rem;
+  border: 1px solid #67d1bd;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  color: #67d1bd;
+}
+.register__container__form__box input:focus {
+  outline: none;
+  border-color: #369970;
+}
+.register__container__form__boxButton {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
 .checkout {
   display: flex;
   flex-direction: row;
@@ -1648,7 +1828,7 @@ button {
   text-decoration: none;
   text-transform: initial;
   letter-spacing: 2px;
-  color: rgb(232, 216, 252);
+  color: #ffffff;
   font-family: "Red Hat Display", sans-serif;
 }
 .footer__copyright {
@@ -1660,7 +1840,7 @@ button {
   color: #ffffff;
   text-transform: initial;
   letter-spacing: 2px;
-  color: rgb(232, 216, 252);
+  color: #ffffff;
   font-family: "Red Hat Display", sans-serif;
   border-top: 1px solid #ffffff;
   padding-top: 2rem;
@@ -1690,7 +1870,7 @@ button {
   text-transform: initial;
   display: inline-block;
   letter-spacing: 2px;
-  color: rgb(232, 216, 252);
+  color: #ffffff;
   font-family: "Red Hat Display", sans-serif;
   transition: all 0.2s;
 }

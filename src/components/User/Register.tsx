@@ -33,7 +33,7 @@ const Register = () => {
   };
 
   let goLogin = (): void => {
-    navigate("/");
+    navigate("/login");
   };
 
   return (
@@ -119,8 +119,8 @@ const Register = () => {
           </div>
 
           <div className="register__container__form__boxButton">
-            <button className="btn__primary" onClick={sing}>Sign up</button>
-            <button className="btn__primary" onClick={goLogin}>Login</button>
+            <button className="button__first" onClick={()=>sing()}>Sign up</button>
+            <button className="button__second" onClick={()=>goLogin()}>Login</button>
           </div>
           <div/>
         </div>

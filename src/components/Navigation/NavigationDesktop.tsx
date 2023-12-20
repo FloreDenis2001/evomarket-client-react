@@ -1,14 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import NavigationItemCard from "./NavigationItemCard";
+import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import {
-
-  faHeart,
-  faUser,
-} from "@fortawesome/free-regular-svg-icons";
-import { faBagShopping, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+  faBagShopping,
+  faCartShopping,
+} from "@fortawesome/free-solid-svg-icons";
+import { LoginContext } from "../../context/LoginProvider";
+import LoginContextType from "../../models/User/LoginContextType";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const NavigationDesktop = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  let { user, setUserCookie } = useContext(LoginContext) as LoginContextType;
+  const navigate = useNavigate();
+
+
+  const handleLogOut = async (): Promise<void> => {
+    try {
+     
+      Cookies.remove("authedUser");
+      navigate("/");
+
+    } catch (err) {
+      console.log('Error log out : ', err);
+    }
+  }
 
   const handleItemClick = () => {
     setModalOpen(true);
@@ -16,9 +33,32 @@ const NavigationDesktop = () => {
   return (
     <div className="navigation__desktop">
       <ul className="navigation__desktop__list">
-        <NavigationItemCard icon={faUser} path={"/myaccount"} />
-        <NavigationItemCard icon={faHeart} path={"/favourite"} />
+      <div className="navigation__desktop__list__bagWhite">
+  <div className="user-dropdown" id="userAccount">
+    <NavigationItemCard icon={faUser} path={"/my-account"} />
+    <div className="dropdown-content">
+      {user.id!=0 ? (
+        <>
+          <p>Hello , {user.firstName}</p>
+          <a href="/my-account">My Account</a>
+          <a href="/orders">Orders</a>
+          <a href="/returns">Returns</a>
+          <a href="/" onClick={()=>handleLogOut()}>Logout</a>
+        </>
+      ) : (
+        <>
+          <a href="/login">Login</a>
+          <a href="/register">Register</a>
+        </>
+      )}
+    </div>
+  </div>
+</div>
 
+
+        <div className="navigation__desktop__list__bagWhite">
+          <NavigationItemCard icon={faHeart} path={"/favourite"} />
+        </div>
         <div className="navigation__desktop__list__bag">
           <NavigationItemCard icon={faBagShopping} path={"/shoppingBag"} />
         </div>
