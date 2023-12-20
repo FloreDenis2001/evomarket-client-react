@@ -6,5 +6,5 @@ export default interface Product{
     quantity:number,
     weight:number,
     category:string,
-    readonly rating:number,
+    rating:number,
 }
