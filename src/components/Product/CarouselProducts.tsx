@@ -55,9 +55,7 @@ const HomeSectionCarousel: React.FC = () => {
             {retriveState === LoadingState.SUCCES && (
                 <Slider {...settings}>
                     {products.map((product) => (
-                        <Link key={product.sku} to={`/product/${product.sku}`}>
                             <ProductCart product={product} />
-                        </Link>
                     ))}
                 </Slider>
             )}

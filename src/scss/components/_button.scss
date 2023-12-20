@@ -87,9 +87,13 @@ button {
     transition: all 0.3s;
 
     &:hover {
-      transform: translateY(-0.3rem) scale(1.02);
+      transform: scale(1.02);
       color: $color-white;
     }
+  }
+
+  &__pageProduct{
+    max-width: 20rem;
   }
   &__second {
     width: 100%;

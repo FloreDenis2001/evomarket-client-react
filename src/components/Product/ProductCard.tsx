@@ -12,22 +12,47 @@ import {
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import useProduct from "../../hooks/useProduct";
 import Rating from "@mui/material/Rating";
+import { useDispatch } from "react-redux";
+import {
+  addProductOnBag,
+  addProductOnBagError,
+  addProductOnBagLoading,
+  addProductOnBagSucces,
+} from "../../store/bag/bag.reducers";
+import ProductBag from "../../models/Product/ProductBag";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 interface ProductProps {
   product: Product;
 }
 
 export const ProductCart: React.FC<ProductProps> = ({ product }) => {
   const [productValue, actions] = useProduct(product);
-
+  const [productBag, setProductBag] = useState<ProductBag>({
+    product: product,
+    quantity: 1,
+  } as ProductBag);
+  const dispatch = useDispatch();
+  const handleAddShoppingBag = async (): Promise<void> => {
+    dispatch(addProductOnBagLoading());
+    try {
+      dispatch(addProductOnBag(productBag));
+      dispatch(addProductOnBagSucces());
+    } catch (error) {
+      dispatch(addProductOnBagError());
+    }
+  };
   return (
     <div className="card swiper-slide">
-      <div className="card__container__image">
-        <img
-          className="card__img"
-          src="https://i.imgur.com/qFoHc8W.png"
-          alt=""
-        />
-      </div>
+      <Link key={product.sku} to={`/product/${product.sku}`}>
+        <div className="card__container__image">
+          <img
+            className="card__img"
+            src="https://i.imgur.com/qFoHc8W.png"
+            alt=""
+          />
+        </div>
+      </Link>
 
       <div className="card__container__title">
         <p className="card__title">{product.name} fadas fdad llksa sajjea </p>
@@ -79,7 +104,12 @@ export const ProductCart: React.FC<ProductProps> = ({ product }) => {
           icon={faShoppingBag}
         />
 
-        <span className="card__container__buyBox__text">Add To Cart</span>
+        <span
+          className="card__container__buyBox__text"
+          onClick={() => handleAddShoppingBag()}
+        >
+          Add To Cart
+        </span>
       </div>
 
       <div className="card__container__fav">

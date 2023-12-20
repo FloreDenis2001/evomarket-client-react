@@ -65,7 +65,7 @@ const CardTotalCheckout = () => {
         </div>
       </div>
 
-      <button className="checkout__footer__button__checkout">
+      <button className="checkout__footer__button__checkout button__first">
         PLACE ORDER
       </button>
     </div>

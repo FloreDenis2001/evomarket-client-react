@@ -107,15 +107,11 @@ const ProductContainerModal: React.FC<ProdcutContainer> = ({ product }) => {
       </div>
 
       <div className="product__container__inputBox">
-        <button onClick={() => handleAddShoppingBag()} className="btn__primary">
+        <button onClick={() => handleAddShoppingBag()} className="button__second button__pageProduct">
           <FontAwesomeIcon icon={faShoppingBag} /> Add Cart
         </button>
 
-        <Link key={product.sku} to={`/product/edit/${product.sku}`}>
-          <button className="btn__primary">
-            <FontAwesomeIcon icon={faEdit} /> Edit Product
-          </button>
-        </Link>
+ 
       </div>
     </div>
   );
