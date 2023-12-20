@@ -15,6 +15,7 @@ import { NavigationLeftBarProvider } from "./components/Navigation/NavigationLef
 import Login from "./components/User/Login";
 import LoginProvider from "./context/LoginProvider";
 import Register from "./components/User/Register";
+import MyAccount from "./components/User/MyAccount";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
                 />
                 <Route path="/shopping-cart" element={<ShoppingBag />} />
                 {/* <Route path="/favourite" element={<Favourite />} /> */}
-                {/* <Route path="/myaccount" element={<ShoppingBag />} /> */}
+                <Route path="/my-account" element={<MyAccount/>} />
                 <Route path="/checkout" element={<Checkout />} />
               </Routes>
               <Footer />

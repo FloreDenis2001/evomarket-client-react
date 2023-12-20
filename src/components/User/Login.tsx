@@ -34,16 +34,22 @@ const Login: React.FC = () => {
 
 
 
+  function handleGoToRegister(){
+    nav("/register");
+  }
+
   return (
-    <div className="main__login">
-      <div className="main__container__left">
-        <h2 className="main__login__title">Login</h2>
+    <div className="login">
+
+      <div className="login__container">
+      <div className="login__container__left">
+        <h2 className="login__container__title">Sign in to Account</h2>
         <form
-          className="main__login__form"
+          className="login__container__form"
           onSubmit={handleSubmit(onSubmit)}
         >
           <input
-            className="main__login__form__input"
+            className="login__container__form__input"
             type="email"
             id="email"
             placeholder="Email"
@@ -51,28 +57,28 @@ const Login: React.FC = () => {
           />
           {errors.email && <span>This field email is required</span>}
           <input
-            className="main__login__form__input"
+            className="login__container__form__input"
             type="password"
             id="password"
             placeholder="Password"
             {...register("password", { required: true, minLength: 3 })}
           />
           {errors.password && <span>This field password is required</span>}
-          <button className="btn__primary" type="submit">
+          <button className="button__second" type="submit">
             Login In
           </button>
         </form>
       </div>
-      <div className="main__container__right">
-        <h2 className="main__login__title">New Here ?</h2>
-        <p className="main__container__text">
+      <div className="login__container__right">
+        <h2 className="login__container__right__title">New Here ?</h2>
+        <p className="login__container__right__text">
           Sing up and discover a greate ammount of new opportunities
         </p>
-        <button className="btn__primary">
+        <button className="button__signUp" onClick={()=>handleGoToRegister()}>
           Sign up
         </button>
       </div>
-      ,
+      </div>
     </div>
   );
 };

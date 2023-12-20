@@ -191,7 +191,7 @@
         text-decoration: none;
         text-transform: initial;
         letter-spacing: 2px;
-        color: rgb(232, 216, 252);
+        color: $color-white;
         font-family: $font-family-secondary;
 
      
@@ -207,7 +207,7 @@
         color: $color-white;
         text-transform: initial;
         letter-spacing: 2px;
-        color: rgb(232, 216, 252);
+        color:$color-white;
         font-family: $font-family-secondary;
         border-top: 1px solid #ffffff;
         padding-top: 2rem;
@@ -238,7 +238,7 @@
             text-transform: initial;
             display: inline-block;
             letter-spacing: 2px;
-            color: rgb(232, 216, 252);
+            color: $color-white;
             font-family: $font-family-secondary;
             transition: all 0.2s;
 
