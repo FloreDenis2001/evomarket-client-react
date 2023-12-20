@@ -22,6 +22,11 @@ const ShoppingList: React.FC<ListProps> = ({onClose}) => {
     onClose();
   }
 
+  function goToCheckout(){
+    nav("/checkout");
+    onClose();
+  }
+
   return (
     <>
       {bag.length >= 0 && (
@@ -44,8 +49,8 @@ const ShoppingList: React.FC<ListProps> = ({onClose}) => {
                 <p className="bag__footer__total__price">$ {total}</p>
               </div>
               <div className="bag__footer__button">
-                <button className="button__textFirst" onClick={handleGoToViewCart}>View Cart</button>
-                <button className="button__second">Checkout</button>
+                <button className="button__textFirst" onClick={()=>handleGoToViewCart()}>View Cart</button>
+                <button className="button__second" onClick={()=>goToCheckout()}>Checkout</button>
               </div>
             </div>
           </div>

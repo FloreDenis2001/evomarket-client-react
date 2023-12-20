@@ -98,7 +98,7 @@ export const ProductCart: React.FC<ProductProps> = ({ product }) => {
         <p className="card__price">${product.price}</p>
       </div>
 
-      <div className="card__container__buyBox">
+      <div className="card__container__buyBox" onClick={() => handleAddShoppingBag()}>
         <FontAwesomeIcon
           className="card__container__buyBox__icon"
           icon={faShoppingBag}
@@ -106,7 +106,7 @@ export const ProductCart: React.FC<ProductProps> = ({ product }) => {
 
         <span
           className="card__container__buyBox__text"
-          onClick={() => handleAddShoppingBag()}
+          
         >
           Add To Cart
         </span>
