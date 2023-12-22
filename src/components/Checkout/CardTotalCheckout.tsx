@@ -6,13 +6,19 @@ import CheckoutCardItem from "./CheckoutCardItem";
 import CreateOrderRequest from "../../models/Order/CreateOrderRequest";
 import LoginContextType from "../../models/User/LoginContextType";
 import { LoginContext } from "../../context/LoginProvider";
+import { BillingDetailsContext } from "../../context/BillingDetailsProvider";
+import AddressContextType from "../../models/Address/AddressContextType";
+import ServiceOrder from "../../services/ServiceOrder";
 
 const CardTotalCheckout = () => {
   const bag = useSelector(selectBag);
+  let serviceOrder=new ServiceOrder();
   const [selectedShippingOption, setSelectedShippingOption] =
     useState<string>("Flat rate");
 
     let { user, setUserCookie } = useContext(LoginContext) as LoginContextType;
+    let { billingAddress,shippingAddress } = useContext(BillingDetailsContext) as AddressContextType;
+
   let total = bag.reduce((acc, product) => {
     return acc + product.product.price * product.quantity;
   }, 0);
@@ -36,11 +42,19 @@ const CardTotalCheckout = () => {
   const orderRequest: CreateOrderRequest = {
     products: bag,
     userId: user.id,
+    shippingAddress: shippingAddress,
+    orderAddress: billingAddress,
   };
 
-  function handlerPlaceOrder(){
+  const handlerPlaceOrder=async () => {
+    console.log(orderRequest);
+    try {
+      let order = await serviceOrder.createOrder(orderRequest);
+      console.log(order);
+    } catch (error) {
+      console.log(error);
+    }
     
-
   }
 
   return (

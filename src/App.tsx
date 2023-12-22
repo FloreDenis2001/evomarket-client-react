@@ -16,12 +16,15 @@ import Login from "./components/User/Login";
 import LoginProvider from "./context/LoginProvider";
 import Register from "./components/User/Register";
 import MyAccount from "./components/User/MyAccount";
+import BillingDetailsProvider from "./context/BillingDetailsProvider";
 
 function App() {
   return (
     <Provider store={store}>
       <NavigationLeftBarProvider>
+    <BillingDetailsProvider>
         <LoginProvider>
+    
           <div className="App">
             <BrowserRouter>
               <Header />
@@ -44,6 +47,7 @@ function App() {
             </BrowserRouter>
           </div>
         </LoginProvider>
+        </BillingDetailsProvider>
       </NavigationLeftBarProvider>
     </Provider>
   );

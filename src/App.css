@@ -687,7 +687,7 @@ button {
   position: relative;
 }
 .carousel-container {
-  max-width: 80%;
+  max-width: 70%;
   align-self: center;
 }
 .carousel__cards {
@@ -1390,6 +1390,80 @@ button {
   gap: 1rem;
 }
 
+.account {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-block: 2rem;
+  margin-inline: 10%;
+}
+.account__title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(150deg, #67d1bd 0%, #369970 54%);
+  color: #ffffff;
+  width: max-content;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+.account__left {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.account__left__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: max-content;
+}
+.account__left__list__option {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  max-width: max-content;
+}
+.account__left__list__option:hover {
+  color: #369970;
+}
+.account__left__list__option__text {
+  font-size: 2.5rem;
+}
+.account__left__list__option__icon {
+  font-size: 2.5rem;
+}
+.account__right {
+  max-width: 40%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+.account__right__box {
+  width: 17rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 17rem;
+  gap: 1rem;
+  font-size: 2.5rem;
+  border-radius: 1rem;
+  border: 1px solid #369970;
+  transition: all 0.5s;
+}
+.account__right__box:hover {
+  color: #ffffff;
+  background: linear-gradient(150deg, #67d1bd 0%, #369970 54%);
+}
+.account__right__box__text {
+  text-align: center;
+}
+
 .checkout {
   display: flex;
   flex-direction: row;
@@ -1503,23 +1577,27 @@ button {
 }
 .checkout input[type=text] {
   height: 4rem;
-  border-radius: 1rem;
   padding-left: 1rem;
   font-size: 1.5rem;
   font-family: "Red Hat Display", sans-serif;
+  border-bottom: 1px solid #369970;
+  transition: all 0.3s;
 }
 .checkout input[type=text]:focus {
+  border-radius: 1rem;
   outline: none;
   border: 1px solid #369970;
 }
 .checkout textarea {
   height: 10rem;
-  border-radius: 1rem;
   padding-left: 1rem;
   font-size: 1.5rem;
   font-family: "Red Hat Display", sans-serif;
+  border-bottom: 1px solid #369970;
+  transition: all 0.3s;
 }
 .checkout textarea:focus {
+  border-radius: 1rem;
   outline: none;
   border: 1px solid #369970;
 }

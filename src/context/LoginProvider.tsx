@@ -32,8 +32,20 @@ const LoginProvider: React.FC<LoginContextProps> = ({ children }) => {
     setUser(user);
   }
 
+  function logOut(){
+    Cookies.remove("authedUser");
+    setUserCookie({
+      id: 0,
+      email: "NOEMAIL",
+      token: "NOTOKEN",
+      firstName: "NOFIRSTNAME",
+      lastName: "NOLASTNAME",
+      userRole: "NOUSERROLE",
+    });
+  }
+
   return (
-    <LoginContext.Provider value={{ user, setUserCookie }}>
+    <LoginContext.Provider value={{ user, setUserCookie,logOut }}>
       {children}
     </LoginContext.Provider>
   );
