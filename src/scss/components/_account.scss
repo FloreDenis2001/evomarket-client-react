@@ -1,0 +1,85 @@
+.account {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-block: 2rem;
+   margin-inline: 10%;
+  &__title{
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: $linear-gradient-2;
+    color: $color-white;
+    width:max-content;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom:2rem;
+
+  }
+
+  &__left {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: max-content;
+
+
+
+      &__option {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        max-width: max-content;
+
+        &:hover{
+            color: $color-primary;
+        }
+        &__text {
+          font-size: 2.5rem;
+        }
+
+        &__icon {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+
+  &__right{
+    max-width: 40%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+
+    &__box{
+      width: 17rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height:17rem;
+      gap: 1rem;
+      font-size:2.5rem;
+      border-radius: 1rem;
+      border: 1px solid $color-primary;
+      transition: all 0.5s;
+
+      &:hover{
+
+        color: $color-white;
+        background: $linear-gradient-2;
+      }
+
+      &__text{
+        text-align: center;
+      }
+    }
+  }
+}

@@ -11,6 +11,7 @@ class ServiceOrder extends ApiServer {
         );
         if (data.status === 201) {
           const order = await data.json();
+          console.log(order);
           return order;
         } else {
           return Promise.reject([]);
