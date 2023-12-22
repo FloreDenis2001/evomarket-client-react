@@ -37,6 +37,7 @@ const NavigationDesktop = () => {
               {user.id != 0 ? (
                 <>
                   <p>Hello , {user.firstName}</p>
+                  {user.userRole === "ADMIN" && (<a href="/panel">Admin Panel</a>)}
                   <a href="/my-account">My Account</a>
                   <a href="/orders">Orders</a>
                   <a href="/returns">Returns</a>

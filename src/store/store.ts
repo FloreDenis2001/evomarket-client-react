@@ -1,21 +1,38 @@
-import React from 'react'
-import { configureStore } from '@reduxjs/toolkit'
-import productSlice from './product/products.reducers'
-import bagSlice from './bag/bag.reducers'
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import productSlice from './product/products.reducers';
+import bagSlice from './bag/bag.reducers';
 import thunk from 'redux-thunk';
+import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-// const persistConfig = {
-//    key: 'root',
-//    storage,
-// };
+interface RootState {
+    productsState: ReturnType<typeof productSlice>;
+    bagState: ReturnType<typeof bagSlice>;
+}
 
-const store = configureStore({
-    reducer: {
-        productsState: productSlice,
-        bagState:bagSlice,
-    }, middleware: [thunk], 
+const rootReducer = combineReducers({
+    productsState: productSlice,
+    bagState: bagSlice,
 });
 
-export default store
+const persistConfig = {
+   key: 'root',
+   version: 1,
+   storage,
+};
 
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+const store = configureStore({
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+            },
+        }).concat(thunk),
+});
+
+const persistor = persistStore(store);
+
+export { store, persistor };

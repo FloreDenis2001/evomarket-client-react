@@ -10,26 +10,28 @@ const selectBagState = (state: RootState) => state.bagState;
 
 export const selectBag = createSelector(
     selectBagState,
-    (bagState?): typeof bagState.products => bagState.products
+
+    (bagState): typeof bagState.products => bagState.products
+    
 )
 
 export const selectRetrieveBagState = createSelector(
     selectBagState,
-    (bagState?): typeof bagState.retriveBagState => bagState.retriveBagState
+    (bagState): typeof bagState.retriveBagState => bagState.retriveBagState
 )
 
 export const selectAddProductOnBagState = createSelector(
     selectBagState,
-    (bagState?): typeof bagState.addProductOnBagState => bagState.addProductOnBagState
+    (bagState): typeof bagState.addProductOnBagState => bagState.addProductOnBagState
 )
 
 export const selectRemoveProductOnBagState = createSelector(
     selectBagState,
-    (bagState?): typeof bagState.removeProductOnBagState => bagState.removeProductOnBagState
+    (bagState): typeof bagState.removeProductOnBagState => bagState.removeProductOnBagState
 )
 
 export const selectUpdateProductOnBagState = createSelector(
     selectBagState,
-    (bagState?): typeof bagState.updateProductOnBagState => bagState.updateProductOnBagState
+    (bagState): typeof bagState.updateProductOnBagState => bagState.updateProductOnBagState
 )
 
