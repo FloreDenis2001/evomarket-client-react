@@ -8,6 +8,7 @@ import storage from 'redux-persist/lib/storage';
 interface RootState {
     productsState: ReturnType<typeof productSlice>;
     bagState: ReturnType<typeof bagSlice>;
+
 }
 
 const rootReducer = combineReducers({

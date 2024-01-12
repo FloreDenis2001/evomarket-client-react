@@ -9,6 +9,7 @@ import { LoginContext } from "../../context/LoginProvider";
 import { BillingDetailsContext } from "../../context/BillingDetailsProvider";
 import AddressContextType from "../../models/Address/AddressContextType";
 import ServiceOrder from "../../services/ServiceOrder";
+import { selectProducts } from "../../store/product/products.selectors";
 
 const CardTotalCheckout = () => {
   const bag = useSelector(selectBag);
